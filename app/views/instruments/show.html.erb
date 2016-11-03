@@ -1,0 +1,11 @@
+<h1>Instruments Show</h1>
+
+<div>
+  <p><%= @instrument.instrument_name %></p>
+  <p><%= @instrument.id %></p>
+</div>
+<div>
+  <% @instrument.musicians.each do |musician| %>
+    <%= link_to musician.name, musician_path(musician) %>
+  <% end %>
+</div>
