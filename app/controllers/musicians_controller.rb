@@ -7,12 +7,16 @@ class MusiciansController < ApplicationController
   def create 
     @musician = Musician.create(login_musician_params)
     if @musician.save
-      # flash
-      redirect_to root_path
+      flash[:success] = 'Musician Created!'
+      redirect_to @musician
     else
-      # flash
-      render :back
+      flash[:error] = @musician.errors.full_messages.join(' ')
+      render :new
     end
+  end
+
+  def show
+    @musician = Musician.find(params[:id])
   end
 
   private
