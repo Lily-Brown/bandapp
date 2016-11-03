@@ -20,6 +20,11 @@
   margin: 40px auto;
 }
 
+.float-fix {
+  width: 100%;
+  overflow: hidden;
+}
+
 nav {
   max-width: 1200px;
   padding: 0 30px;
@@ -48,4 +53,32 @@ nav li a:hover {
   background-color: #fff;
   color: purple;
   text-decoration: none;
+}
+
+.home-find-container {
+  width: 400px;
+  margin: 60px auto;
+}
+
+.find-musicians {
+  background: gray;
+  display: block;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  padding: 0;
+  vertical-align: center;
+  margin: 0 50px 0 0;
+  float: left;
+}
+
+.find-bands {
+  background: gray;
+  display: block;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  float: left;
 }
