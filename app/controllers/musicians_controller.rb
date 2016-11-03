@@ -1,4 +1,5 @@
 class MusiciansController < ApplicationController
+  before_action :get_musician, only: [:show, :edit, :update, :destroy]
 
   def new
     @musician = Musician.new
@@ -16,15 +17,12 @@ class MusiciansController < ApplicationController
   end
 
   def show
-    @musician = Musician.find(params[:id])
   end
 
   def edit
-    @musician = Musician.find(params[:id])
   end
 
   def update
-    @musician = Musician.find(params[:id])
     if @musician.update(update_musician_params)
       flash[:success] = 'Musician Updated!'
       redirect_to @musician
@@ -35,8 +33,8 @@ class MusiciansController < ApplicationController
   end
 
   def destroy
-    @musician = Musician.find(params[:id])
     @musician.destroy
+    redirect_to root_path
   end
 
 
@@ -48,5 +46,9 @@ class MusiciansController < ApplicationController
 
   def update_musician_params
     params.require(:musician).permit(:name,:genres,:influences,:bio,:zip_code,:image,:audio_clip,:gear)
+  end
+
+  def get_musician
+    @musician = Musician.find(params[:id])
   end
 end
