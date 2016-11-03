@@ -1,7 +1,37 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Instrument.create([
+  { instrument_name: "Accordion"},
+  { instrument_name: "Acoustic Guitar"},
+  { instrument_name: "Background Singer"},
+  { instrument_name: "Bagpipes"},
+  { instrument_name: "Banjo"},
+  { instrument_name: "Bass Guitar"},
+  { instrument_name: "Cello"},
+  { instrument_name: "Clarinet"},
+  { instrument_name: "DJ"},
+  { instrument_name: "Dobro"},
+  { instrument_name: "Drums"},
+  { instrument_name: "Electronic Music"},
+  { instrument_name: "Fiddle"},
+  { instrument_name: "Flute"},
+  { instrument_name: "Harmonica"},
+  { instrument_name: "Harp"},
+  { instrument_name: "Keyboard"},
+  { instrument_name: "Lead Guitar"},
+  { instrument_name: "Mandolin"},
+  { instrument_name: "Other Percussion"},
+  { instrument_name: "Piano"},
+  { instrument_name: "Rhythm Guitar"},
+  { instrument_name: "Saxophone"},
+  { instrument_name: "Steel guitar"},
+  { instrument_name: "Trombone"},
+  { instrument_name: "Trumpet"},
+  { instrument_name: "Ukulele"},
+  { instrument_name: "Upright bass"},
+  { instrument_name: "Violin"},
+  { instrument_name: "Vocalist"},
+  { instrument_name: "Vocalist - Alto"},
+  { instrument_name: "Vocalist - Baritone"},
+  { instrument_name: "Vocalist - Bass"},
+  { instrument_name: "Vocalist - Soprano"},
+  { instrument_name: "Vocalist - Tenor"}
+])

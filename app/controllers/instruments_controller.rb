@@ -5,7 +5,6 @@ class InstrumentsController < ApplicationController
   end
 
   def show
-    # explode
     @instrument = Instrument.find(params[:id])
   end
 
