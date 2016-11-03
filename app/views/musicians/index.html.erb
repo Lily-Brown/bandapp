@@ -1,0 +1,8 @@
+<% @musicians.each do |musician| %>
+<div>
+  <p><%= link_to musician.name, musician_path(musician) %></p>
+  <p><%= musician.genres %></p>
+  <p><%= musician.image %></p>
+  <p><%= musician.bio %></p>
+</div>
+<% end %>
