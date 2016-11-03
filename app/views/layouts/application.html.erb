@@ -13,6 +13,9 @@
     <!-- Start Nav -->
     <nav>
       <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Musicians", musicians_path %></li>
+        <li><%= link_to "Bands", root_path %></li>
         <% if current_musician %>
           <li><%= link_to "Profile", musician_path(current_musician) %></li>
           <li><%= link_to "Log Out", logout_path %></li>
