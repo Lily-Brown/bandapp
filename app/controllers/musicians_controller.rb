@@ -1,6 +1,10 @@
 class MusiciansController < ApplicationController
   before_action :get_musician, only: [:show, :edit, :update, :destroy]
 
+  def index 
+    @musicians = Musician.all
+  end
+
   def new
     @musician = Musician.new
   end
