@@ -19,15 +19,24 @@
       </div>
        <div class="input-field">
         <%= f.text_field :image, placeholder: "Image", class: "form-control" %>
-      </div>     
+      </div>
       <div class="input-field">
         <%= f.text_field :audio_clip, placeholder: "Audio Clip", class: "form-control" %>
       </div>
       <div class="input-field">
         <%= f.text_field :gear, placeholder: "Gear", class: "form-control" %>
       </div>
+      <div class="input-field">
+        <%= f.collection_check_boxes( :instrument_ids, Instrument.all, :id, :instrument_name, {:prompt => "Please Select a Sector"}, {:multiple => true}) %>
+      </div>
       <%= link_to "Cancel", :back, class: "btn btn-secondary" %>
       <%= f.submit "Save Changes", class: "btn btn-primary" %>
     </div>
   <% end %>
 </section>
+
+<!-- <div>
+  <% @musician.instruments.each do |instrument| %>
+    <%= link_to instrument.instrument_name, instrument_path(instrument) %>
+  <% end %>
+</div> -->
