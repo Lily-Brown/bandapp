@@ -1,7 +1,8 @@
 class MusiciansController < ApplicationController
   before_action :get_musician, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?, only: [:edit, :update, :destroy]
 
-  def index 
+  def index
     @musicians = Musician.all
   end
 
@@ -9,9 +10,10 @@ class MusiciansController < ApplicationController
     @musician = Musician.new
   end
 
-  def create 
+  def create
     @musician = Musician.create(login_musician_params)
     if @musician.save
+      login(@musician)
       flash[:success] = 'Musician Created!'
       redirect_to @musician
     else
