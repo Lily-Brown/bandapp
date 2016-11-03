@@ -15,6 +15,10 @@ class MusiciansController < ApplicationController
     end
   end
 
+  def show
+    @musician = Musician.find(params[:id])
+  end
+
   private
 
   def login_musician_params
