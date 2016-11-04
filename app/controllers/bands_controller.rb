@@ -11,7 +11,7 @@ class BandsController < ApplicationController
   end
 
   def create
-    @band = current_band.bands.create(create_band_params)
+    @band = current_musician.bands.create(create_band_params)
     if @band.save
       flash[:success] = 'Band Created!'
       redirect_to @band
