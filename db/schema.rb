@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104165357) do
+ActiveRecord::Schema.define(version: 20161104203555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "band_instrument_musicians", force: :cascade do |t|
+    t.integer  "musician_id"
+    t.integer  "instrument_id"
+    t.integer  "band_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["band_id"], name: "index_band_instrument_musicians_on_band_id", using: :btree
+    t.index ["instrument_id"], name: "index_band_instrument_musicians_on_instrument_id", using: :btree
+    t.index ["musician_id"], name: "index_band_instrument_musicians_on_musician_id", using: :btree
+  end
 
   create_table "bands", force: :cascade do |t|
     t.string   "band_name"
@@ -62,6 +73,9 @@ ActiveRecord::Schema.define(version: 20161104165357) do
     t.datetime "updated_at",         null: false
   end
 
+  add_foreign_key "band_instrument_musicians", "bands"
+  add_foreign_key "band_instrument_musicians", "instruments"
+  add_foreign_key "band_instrument_musicians", "musicians"
   add_foreign_key "bands", "musicians"
   add_foreign_key "instrument_musicians", "instruments"
   add_foreign_key "instrument_musicians", "musicians"
