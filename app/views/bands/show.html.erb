@@ -9,6 +9,12 @@
   <p><%= @band.gear %></p>
 </div>
 
+<div>
+  <% @members.each do |m| %>
+    <p><%= m.musician.name %> - <%= m.instrument.instrument_name %></p>
+  <% end %>
+</div>
+
 <% if current_musician == @band.musician %>
 <div>
   <p><%= link_to 'Edit', edit_band_path %></p>
