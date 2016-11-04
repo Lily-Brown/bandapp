@@ -1,6 +1,7 @@
 class MusiciansController < ApplicationController
   before_action :get_musician, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?, only: [:edit, :update, :destroy]
+  before_action :is_current_musician, only: [:edit, :update, :destroy]
 
   def index
     @musicians = Musician.all
@@ -56,5 +57,12 @@ class MusiciansController < ApplicationController
 
   def get_musician
     @musician = Musician.find(params[:id])
+  end
+
+  def is_current_musician
+    if current_musician != @musician
+      flash[:error] = 'You do not have permission to perform this action'
+      redirect_to current_musician
+    end
   end
 end
