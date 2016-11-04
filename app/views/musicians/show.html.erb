@@ -14,7 +14,11 @@
     <%= link_to instrument.instrument_name, instrument_path(instrument) %>
   <% end %>
 </div>
-
+<div>
+  <% @musician.bands.each do |band| %>
+    <%= link_to band.band_name, band_path(band) %>
+  <% end %>
+</div>
 <% if current_musician == @musician %>
   <div>
     <p><%= link_to 'Create Band', new_band_path %></p>
