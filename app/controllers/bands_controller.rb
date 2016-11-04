@@ -22,6 +22,7 @@ class BandsController < ApplicationController
   end
 
   def show
+    @members = BandInstrumentMusician.all.where(band_id: @band.id)
   end
 
   def edit
