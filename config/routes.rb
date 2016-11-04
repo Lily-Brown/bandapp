@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   resources :musicians
   resources :instruments
+  resources :bands
 
 end

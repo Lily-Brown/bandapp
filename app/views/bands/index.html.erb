@@ -1,0 +1,8 @@
+<% @bands.each do |band| %>
+<div>
+  <p><%= link_to band.band_name, band_path(band) %></p>
+  <p><%= band.genres %></p>
+  <p><%= band.image %></p>
+  <p><%= band.bio %></p>
+</div>
+<% end %>

@@ -1,0 +1,13 @@
+<section class="form-container">
+
+  <h1>Create Dat Band</h1>
+  <%= form_for @band do |f| %>
+    <div class="container-gray">
+      <div class="input-field">
+        <%= f.text_field :band_name, placeholder: "Name", class: "form-control" %>
+      </div>
+      <%= f.submit "Create", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+</section>
