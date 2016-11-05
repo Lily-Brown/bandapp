@@ -1,8 +1,8 @@
 <% @musicians.each do |musician| %>
 <div>
+  <%= image_tag musician.photo(:medium) %>
   <p><%= link_to musician.name, musician_path(musician) %></p>
   <p><%= musician.genres %></p>
-  <p><%= musician.image %></p>
   <p><%= musician.bio %></p>
 </div>
 <% end %>
