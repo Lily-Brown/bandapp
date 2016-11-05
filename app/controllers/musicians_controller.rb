@@ -25,6 +25,7 @@ class MusiciansController < ApplicationController
 
   def show
     session[:musician_add] = @musician.id
+    @memberships = get_members.all.where(musician_id: @musician.id)
   end
 
   def edit
@@ -65,5 +66,9 @@ class MusiciansController < ApplicationController
       flash[:error] = 'You do not have permission to perform this action'
       redirect_to current_musician
     end
+  end
+
+  def get_members
+    @members = BandInstrumentMusician.all.where.not({musician_id: nil})
   end
 end

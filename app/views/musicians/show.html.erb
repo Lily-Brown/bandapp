@@ -16,9 +16,15 @@
   <% end %>
 </div>
 <div>
-  <strong>My bands: </strong>
+  <strong>Bands I own: </strong>
   <% @musician.bands.each do |band| %>
     <%= link_to band.band_name, band_path(band) %>
+  <% end %>
+</div>
+<div>
+  <strong>Bands I'm in: </strong>
+  <% @memberships.each do |membership| %>
+    <%= link_to membership.band.band_name, band_path(membership.band) %> - <%= membership.instrument.instrument_name %>
   <% end %>
 </div>
 <div>
