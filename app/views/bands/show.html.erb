@@ -16,6 +16,13 @@
   <% end %>
 </div>
 
+<div>
+  <h3>Openings:</h3>
+  <% @openings.each do |o| %>
+    <p><%= o.instrument.instrument_name %> Player</p>
+  <% end %>
+</div>
+
 <% if current_musician == @band.musician %>
 <div>
   <p><%= link_to 'Add Opening', new_band_instrument_musician_path %> </p>
