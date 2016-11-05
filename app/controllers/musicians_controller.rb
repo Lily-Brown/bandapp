@@ -24,6 +24,7 @@ class MusiciansController < ApplicationController
   end
 
   def show
+    session[:musician_add] = @musician.id
   end
 
   def edit
