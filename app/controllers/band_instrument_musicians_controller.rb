@@ -1,4 +1,5 @@
 class BandInstrumentMusiciansController < ApplicationController
+  before_action :is_owner, only: [:edit, :update]
 
   def new
     @member = BandInstrumentMusician.new
@@ -24,8 +25,10 @@ class BandInstrumentMusiciansController < ApplicationController
 
   def destroy
     member_id = params['member_id'].to_i
-    BandInstrumentMusician.find(member_id).destroy
-    redirect_to band_path
+    @member = BandInstrumentMusician.find(member_id)
+    is_owner_destroy
+    @member.destroy
+    redirect_to root_path
   end
 
   private
@@ -36,6 +39,22 @@ class BandInstrumentMusiciansController < ApplicationController
 
   def get_openings
     @openings = BandInstrumentMusician.all.where({musician_id: nil})
+  end
+
+  def is_owner
+    # if current_musician != @band.musician
+    # if current_musician != Band.find(params['id'].to_i).musician
+    if current_musician != Band.find(params['id'].to_i).musician
+      flash[:error] = 'You do not have permission to perform this action'
+      redirect_to root_path
+    end
+  end
+
+  def is_owner_destroy
+   if current_musician != @member.musician
+      flash[:error] = 'You do not have permission to perform this action'
+      # redirect_to root_path
+    end
   end
 
 end
