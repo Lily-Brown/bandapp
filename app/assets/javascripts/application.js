@@ -11,12 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require best_in_place
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
-  /* Activating Best In Place */
-  jQuery(".best_in_place").best_in_place();
+$( document ).ready(function() {
+  $('.toggle_edit').click(function(event) {
+    event.preventDefault();
+    $('.toggle_text').attr('class','edit_text')
+    $('.toggle_text_area').attr('class', 'edit_area')
+  });
 });

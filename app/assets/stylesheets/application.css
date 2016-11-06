@@ -82,3 +82,19 @@ nav li a:hover {
   margin: 0;
   float: left;
 }
+
+/* For editable fields */
+.toggle_text {
+  font-size: 1em;
+  font-family: serif;
+  border: none;
+}
+
+.toggle_text_area {
+  font-size: 1em;
+  font-family: serif;
+  border: none;
+  resize: none;
+  max-height: 5em;
+  width: 90%; 
+}

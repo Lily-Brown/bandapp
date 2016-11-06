@@ -28,7 +28,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 # Best_in_place for editable fields on profiles
-gem 'best_in_place', '~> 3.0.1'
+# gem 'best_in_place', '~> 3.0.1'
+# # Allow for editable fields in groups
+# gem 'edit_mode'
 
 gem 'paperclip'
 # Use Capistrano for deployment
