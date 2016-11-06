@@ -1,7 +1,7 @@
-<div>
+<div class='toggle'>
   <%= image_tag @musician.photo(:medium) %>
   <%= form_for(@musician,url: musician_path) do |f| %>
-    <h1><%= f.text_field :name, disabled: true, class: 'toggle_text' %></h1>
+    <h1><p><%= f.text_field :name, disabled: true, class: 'toggle_text' %></p></h1>
     <p><%= f.text_area :genres, disabled: true, class: 'toggle_text_area' %></p>
     <p><%= f.text_area :influences, disabled: true, class: 'toggle_text_area' %></p>
     <p><%= f.text_area :bio, disabled: true, class: 'toggle_text_area' %></p>
@@ -34,9 +34,10 @@
   <p><%= link_to 'Add to My Band', edit_band_instrument_musician_path %></p>
 </div>
 <% if current_musician == @musician %>
-  <div>
+  <div class='toggle'>
     <p><%= link_to 'Create Band', new_band_path %></p>
-    <p><%= link_to 'Edit', edit_musician_path, class: 'toggle_edit' %></p>
+    <p><%= link_to 'Edit', '#', class: 'toggle_edit btn_show' %></p>
+    <p><%= link_to 'Save', '#', class: 'toggle_save btn_hide' %></p>
     <p><%= link_to 'Delete', musician_path, method: :delete, data: { confirm: 'Are you sure you want to delete this Musician?' } %></p>
   </div>
 <%end%>

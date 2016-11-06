@@ -16,9 +16,15 @@
 //= require_tree .
 
 $( document ).ready(function() {
-  $('.toggle_edit').click(function(event) {
+  $(document).on('click','.toggle_edit',function(event) {
     event.preventDefault();
-    $('.toggle_text').attr('class','edit_text')
-    $('.toggle_text_area').attr('class', 'edit_area')
+    $('input').toggleClass('toggle_text edit_text');
+    $('textarea').toggleClass('toggle_text_area edit_area');
+    $('a.toggle').toggleClass('btn_show btn_hide');
+    $('.edit_text').removeAttr('disabled');
+    $('.edit_area').removeAttr('disabled');
+    $('.toggle_text').attr('disabled',true);
+    $('.toggle_text_area').attr('disabled',true);
   });
+
 });
