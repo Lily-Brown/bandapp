@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106210725) do
+ActiveRecord::Schema.define(version: 20161106215814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 20161106210725) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "slug"
+    t.index ["slug"], name: "index_musicians_on_slug", unique: true, using: :btree
   end
 
   add_foreign_key "band_instrument_musicians", "bands"
