@@ -1,20 +1,28 @@
 <div>
   <%= image_tag @musician.photo(:medium) %>
-  <h1><%= @musician.name %></h1>
-  <p><%= @musician.genres %></p>
-  <p><%= @musician.influences %></p>
-  <p><%= @musician.bio %></p>
-  <p><%= @musician.zip_code %></p>
-  <p><%= @musician.audio_clip %></p>
-  <p><%= @musician.gear %></p>
+  <!-- <h1><%#= @musician.name %></h1> -->
+  <h1><%= best_in_place @musician, :name, :as => :input %></h1>
+  <!-- <p><%#= @musician.genres %></p> -->
+  <p><%= best_in_place @musician, :genres, :as => :textarea %></p>
+  <!-- <p><%#= @musician.influences %></p> -->
+  <p><%= best_in_place @musician, :influences, :as => :textarea %></p>
+  <!-- <p><%#= @musician.bio %></p> -->
+  <p><%= best_in_place @musician, :bio, :as => :textarea %></p>
+  <!-- <p><%#= @musician.zip_code %></p> -->
+  <p><%= best_in_place @musician, :zip_code, :as => :input %></p>
+  <!-- <p><%#= @musician.audio_clip %></p> -->
+  <p><%= best_in_place @musician, :audio_clip, :as => :input %></p>
+  <!-- <p><%#= @musician.gear %></p> -->
+  <p><%= best_in_place @musician, :gear, :as => :textarea %></p>
 </div>
 
 <div>
   <strong>Instruments: </strong>
   <% @musician.instruments.each do |instrument| %>
     <%= link_to instrument.instrument_name, instrument_path(instrument) %>
-  <% end %>
+  <% end %> 
 </div>
+
 <div>
   <strong>Bands I own: </strong>
   <% @musician.bands.each do |band| %>
