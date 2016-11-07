@@ -3,6 +3,9 @@ class Musician < ApplicationRecord
   validates_attachment :photo,
   content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
+  has_attached_file :mp3
+  do_not_validate_attachment_file_type :mp3, :content_type => /.*/
+
 
   # membership in band w/ instrument
   # has_many :band_instrument_musicians, dependent: :destroy
