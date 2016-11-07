@@ -15,7 +15,9 @@
   <% @members.each do |m| %>
     <p>
       <%= m.musician.name %> - <%= m.instrument.instrument_name %>
-      <%= button_to 'peace', band_instrument_musician_path, params:{member_id: m.id}, method: :delete %>
+      <% if current_musician == @band.musician %>
+        <%= button_to 'peace', band_instrument_musician_path, params:{member_id: m.id}, method: :delete %>
+      <% end %>
     </p>
   <% end %>
 </div>
