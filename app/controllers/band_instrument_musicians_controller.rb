@@ -45,14 +45,14 @@ class BandInstrumentMusiciansController < ApplicationController
   def is_owner
     if current_musician != BandInstrumentMusician.find(params['id'].to_i).band.musician
       flash[:error] = 'You do not have permission to perform this action'
-      redirect_to root_path
+      redirect_to :back
     end
   end
 
   def is_owner_destroy
-   if current_musician != BandInstrumentMusician.find(params['member_id'].to_i).band.musician
+    if current_musician != BandInstrumentMusician.find(params['member_id'].to_i).band.musician
       flash[:error] = 'You do not have permission to perform this action'
-      redirect_to root_path
+      redirect_to :back
     end
   end
 
