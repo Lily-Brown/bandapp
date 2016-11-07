@@ -25,9 +25,13 @@
   <p><%= f.text_area :gear, placeholder: "Gear", disabled: true,
             class: 'toggle_text_area value' %></p>
     <div class ='toggle btn_show'>
-      <audio controls>
-        <source src="<%= @musician.mp3 %>" type="audio/mpeg">
-      </audio>
+      <% if @musician.mp3? %>
+        <audio controls>
+          <source src="<%= @musician.mp3 %>" type="audio/mpeg">
+        </audio>
+      <% else %>
+        <p>Mp3 audio has not been uploaded.</p>
+      <% end %>
     </div>
   <p class='toggle btn_hide'>
     <strong>Instruments: </strong></br>
