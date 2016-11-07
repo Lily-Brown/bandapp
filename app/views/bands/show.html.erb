@@ -1,6 +1,10 @@
 <%= image_tag @band.photo(:medium) %>
 
 <div>
+  <p><a href="mailto:<%= @band.musician.email %>">Send Message</a></p>
+</div>
+
+<div>
   <%= form_for(@band,url: band_path) do |f| %>
   <p class='toggle btn_hide'>Change photo: <%= f.file_field :photo %></p>
   <h1><p><%= f.text_field :band_name, placeholder: "Band Name", disabled: true,

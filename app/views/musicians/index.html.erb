@@ -2,7 +2,7 @@
 
 <% @musicians.each do |musician| %>
 <div>
-  <%= image_tag musician.photo(:medium) %>
+  <%= image_tag musician.photo(:thumb) %>
   <p><%= link_to musician.name, musician_path(musician) %></p>
   <p><%= musician.genres %></p>
   <p><%= musician.bio %></p>
