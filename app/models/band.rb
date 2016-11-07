@@ -4,6 +4,9 @@ class Band < ApplicationRecord
     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
   validates :band_name, uniqueness: true
 
+  has_attached_file :mp3
+  do_not_validate_attachment_file_type :mp3, :content_type => /.*/
+
   # owner
   belongs_to :musician
 
