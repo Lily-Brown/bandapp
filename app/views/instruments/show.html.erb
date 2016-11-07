@@ -4,8 +4,13 @@
   <p><%= @instrument.instrument_name %></p>
   <p><%= @instrument.id %></p>
 </div>
+
+
 <div>
-  <% @instrument.musicians.each do |musician| %>
-    <%= link_to musician.name, musician_path(musician) %>
+  <% @instrument.instrument_musicians.each do |instrument_musician| %>
+    <% instrument_musician.musician.name %>
+    <li>
+      <%= link_to instrument_musician.musician.name, musician_path(instrument_musician.musician) %>
+    </li><br>
   <% end %>
 </div>
