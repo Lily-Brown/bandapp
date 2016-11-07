@@ -54,7 +54,7 @@ class MusiciansController < ApplicationController
   end
 
   def update_musician_params
-    params.require(:musician).permit(:name,:genres,:influences,:bio,:zip_code,:audio_clip,:gear,:photo,:slug,instrument_ids:[])
+    params.require(:musician).permit(:name,:genres,:influences,:bio,:zip_code,:audio_clip,:gear,:photo,:slug,:mp3,instrument_ids:[])
   end
 
   def get_musician
