@@ -1,4 +1,5 @@
 <div>
+  <%= image_tag @band.photo(:medium) %>
   <h1><%= @band.band_name %></h1>
   <p><%= @band.genres %></p>
   <p><%= @band.influences %></p>
@@ -12,14 +13,20 @@
 <div>
   <h3>Members:</h3>
   <% @members.each do |m| %>
-    <p><%= m.musician.name %> - <%= m.instrument.instrument_name %></p>
+    <p>
+      <%= m.musician.name %> - <%= m.instrument.instrument_name %>
+      <%= button_to 'peace', band_instrument_musician_path, params:{member_id: m.id}, method: :delete %>
+    </p>
   <% end %>
 </div>
 
 <div>
   <h3>Openings:</h3>
   <% @openings.each do |o| %>
-    <p><%= o.instrument.instrument_name %> Player</p>
+    <p>
+      <%= o.instrument.instrument_name %> Player
+      <%= button_to 'remove opening', band_instrument_musician_path, params:{member_id: o.id}, method: :delete %>
+    </p>
   <% end %>
 </div>
 

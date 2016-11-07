@@ -1,4 +1,8 @@
 class Musician < ApplicationRecord
+  has_attached_file :photo, :styles => { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment :photo,
+  content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
+
 
   # membership in band w/ instrument
   # has_many :band_instrument_musicians, dependent: :destroy
