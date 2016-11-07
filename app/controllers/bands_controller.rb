@@ -48,15 +48,15 @@ class BandsController < ApplicationController
   private
 
   def create_band_params
-    params.require(:band).permit(:band_name)
+    params.require(:band).permit(:band_name,:slug)
   end
 
   def get_band
-    @band = Band.find(params[:id])
+    @band = Band.friendly.find(params[:id])
   end
 
   def update_band_params
-    params.require(:band).permit(:band_name,:genres,:influences,:bio,:zip_code,:audio_clip,:gear,:photo)
+    params.require(:band).permit(:band_name,:genres,:influences,:bio,:zip_code,:audio_clip,:gear,:photo,:slug)
   end
 
   def is_owner

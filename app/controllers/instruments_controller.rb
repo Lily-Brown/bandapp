@@ -5,7 +5,7 @@ class InstrumentsController < ApplicationController
   end
 
   def show
-    @instrument = Instrument.find(params[:id])
+    @instrument = Instrument.friendly.find(params[:id])
   end
 
 end
