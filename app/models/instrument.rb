@@ -11,4 +11,7 @@ class Instrument < ApplicationRecord
 
   has_and_belongs_to_many :musicians, join_table: :band_instrument_musicians
 	has_and_belongs_to_many :bands, join_table: :band_instrument_musicians
+
+  extend FriendlyId
+  friendly_id :instrument_name, use: :slugged
 end

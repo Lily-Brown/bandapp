@@ -1,3 +1,5 @@
+<p><%= link_to 'find a musician by instrument', instruments_path %></p>
+
 <% @musicians.each do |musician| %>
 <div>
   <%= image_tag musician.photo(:medium) %>

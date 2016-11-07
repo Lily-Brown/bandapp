@@ -23,8 +23,11 @@ class Musician < ApplicationRecord
 
   has_secure_password
   validates :name, :email, :password, presence: true, :on => :create
-  validates :email, uniqueness: true
+  validates :email, :name, uniqueness: true
   validates :password, length: { minimum: 6 }, :on => :create
+
+  extend FriendlyId
+    friendly_id :name, use: :slugged
 
   def self.confirm(params)
     @musician = Musician.find_by({email: params[:email]})
