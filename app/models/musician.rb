@@ -3,7 +3,7 @@ class Musician < ApplicationRecord
   validates_attachment :photo,
   content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
-  has_attached_file :mp3
+  has_attached_file :mp3, :default_url => ":style/Please edit your profile to add an MP3.mp3"
   do_not_validate_attachment_file_type :mp3, :content_type => /.*/
 
 
