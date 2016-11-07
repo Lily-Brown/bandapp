@@ -36,8 +36,8 @@
 <% if current_musician == @musician %>
   <div class='toggle'>
     <p><%= link_to 'Create Band', new_band_path %></p>
-    <p><%= link_to 'Edit', '#', class: 'toggle_edit btn_show' %></p>
-    <p><%= link_to 'Save', '#', class: 'toggle_save btn_hide' %></p>
+    <p><%= link_to 'Edit', '#', class: 'toggle_button edit btn_show' %></p>
+    <p><%= link_to 'Save', '#', class: 'toggle_button save btn_hide' %></p>
     <p><%= link_to 'Delete', musician_path, method: :delete, data: { confirm: 'Are you sure you want to delete this Musician?' } %></p>
   </div>
 <%end%>
