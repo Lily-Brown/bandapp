@@ -1,6 +1,6 @@
 <% @bands.each do |band| %>
 <div>
-  <%= image_tag band.photo(:medium) %>
+  <%= image_tag band.photo(:thumb) %>
   <p><%= link_to band.band_name, band_path(band) %></p>
   <p><%= band.genres %></p>
   <p><%= band.bio %></p>
