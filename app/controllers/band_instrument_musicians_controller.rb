@@ -29,7 +29,7 @@ class BandInstrumentMusiciansController < ApplicationController
     member_id = params['member_id'].to_i
     @member = BandInstrumentMusician.find(member_id)
     @member.destroy
-    redirect_to root_path
+    redirect_to band_path(@member.band)
   end
 
   private
