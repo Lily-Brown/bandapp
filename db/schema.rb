@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107004408) do
+ActiveRecord::Schema.define(version: 20161107214620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,10 @@ ActiveRecord::Schema.define(version: 20161107004408) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "slug"
+    t.string   "mp3_file_name"
+    t.string   "mp3_content_type"
+    t.integer  "mp3_file_size"
+    t.datetime "mp3_updated_at"
     t.index ["musician_id"], name: "index_bands_on_musician_id", using: :btree
     t.index ["slug"], name: "index_bands_on_slug", unique: true, using: :btree
   end
@@ -95,12 +99,12 @@ ActiveRecord::Schema.define(version: 20161107004408) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string   "slug"
-    t.index ["slug"], name: "index_musicians_on_slug", unique: true, using: :btree
     t.string   "mp3_file_name"
     t.string   "mp3_content_type"
     t.integer  "mp3_file_size"
     t.datetime "mp3_updated_at"
+    t.string   "slug"
+    t.index ["slug"], name: "index_musicians_on_slug", unique: true, using: :btree
   end
 
   add_foreign_key "band_instrument_musicians", "bands"
