@@ -50,15 +50,15 @@ class MusiciansController < ApplicationController
   private
 
   def login_musician_params
-    params.require(:musician).permit(:name,:email,:password,:password_confirmation)
+    params.require(:musician).permit(:name,:email,:password,:password_confirmation,:slug)
   end
 
   def update_musician_params
-    params.require(:musician).permit(:name,:genres,:influences,:bio,:zip_code,:audio_clip,:gear,:photo,instrument_ids:[])
+    params.require(:musician).permit(:name,:genres,:influences,:bio,:zip_code,:audio_clip,:gear,:photo,:slug,:mp3,instrument_ids:[])
   end
 
   def get_musician
-    @musician = Musician.find(params[:id])
+    @musician = Musician.friendly.find(params[:id])
   end
 
   def is_current_musician

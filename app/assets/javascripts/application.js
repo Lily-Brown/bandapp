@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$( document ).ready(function() {
+
+  toggle_fields = function() {
+    $('input.value').toggleClass('toggle_text edit_text');
+    $('textarea.value').toggleClass('toggle_text_area edit_area');
+    $('.edit_text').removeAttr('disabled');
+    $('.edit_area').removeAttr('disabled');
+    $('.toggle_text').attr('disabled',true);
+    $('.toggle_text_area').attr('disabled',true);
+    $('.toggle').toggleClass('btn_show btn_hide')
+    $('.save').removeAttr('disabled');
+  }
+
+});

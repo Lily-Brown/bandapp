@@ -3,6 +3,9 @@ class Musician < ApplicationRecord
   validates_attachment :photo,
   content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
+  has_attached_file :mp3
+  do_not_validate_attachment_file_type :mp3, :content_type => /.*/
+
 
   # membership in band w/ instrument
   # has_many :band_instrument_musicians, dependent: :destroy
@@ -20,8 +23,11 @@ class Musician < ApplicationRecord
 
   has_secure_password
   validates :name, :email, :password, presence: true, :on => :create
-  validates :email, uniqueness: true
+  validates :email, :name, uniqueness: true
   validates :password, length: { minimum: 6 }, :on => :create
+
+  extend FriendlyId
+    friendly_id :name, use: :slugged
 
   def self.confirm(params)
     @musician = Musician.find_by({email: params[:email]})
