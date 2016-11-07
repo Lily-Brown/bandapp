@@ -5,8 +5,10 @@
   <p><%= @musician.influences %></p>
   <p><%= @musician.bio %></p>
   <p><%= @musician.zip_code %></p>
-  <p><%= mp3_player @musician.mp3 %></p>
   <p><%= @musician.gear %></p>
+  <audio controls>
+    <source src="<%= @musician.mp3 %>" type="audio/mpeg">
+  </audio>
 </div>
 
 <div>
