@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Instrument, type: :model do
   subject(:instrument) {Instrument.new}
   subject(:musician) {Musician.new}
+  subject(:band) {Band.new}
 
   describe "::new" do
     it "initializes a new instrument" do
@@ -27,6 +28,19 @@ RSpec.describe Instrument, type: :model do
       instrument.musicians << musician2
       instrument.musicians << musician
       expect(instrument.musicians).to eq([musician2,musician])
+    end
+  end
+
+  describe "::bands" do
+    it "can belong to a band" do
+      instrument.bands << band
+      expect(instrument.bands).to eq([band])
+    end
+    it "can belong to many musicians" do
+      band2 = Band.new
+      instrument.bands << band
+      instrument.bands << band2
+      expect(instrument.bands).to eq([band,band2])
     end
   end
 
