@@ -2,7 +2,9 @@ class Band < ApplicationRecord
   has_attached_file :photo, :styles => { medium: "300x300>", thumb: "150x150>" }, :default_url => ":style/default-band-photo.png"
   validates_attachment :photo,
     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
-  validates :band_name, uniqueness: true
+
+  validates_uniqueness_of :band_name, :slug, :case_sensitive => true
+  validates :band_name, presence: true, :on => :create
 
   has_attached_file :mp3
   do_not_validate_attachment_file_type :mp3, :content_type => /.*/
