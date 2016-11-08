@@ -24,4 +24,8 @@ class Band < ApplicationRecord
     BandInstrumentMusician.all.where.not({musician_id: nil})
   end
 
+  def openings
+    BandInstrumentMusician.all.where({musician_id: nil})
+  end
+
 end

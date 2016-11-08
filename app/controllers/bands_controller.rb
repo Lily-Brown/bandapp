@@ -23,7 +23,7 @@ class BandsController < ApplicationController
 
   def show
     @members = @band.members.all.where(band_id: @band.id)
-    @openings = get_openings.all.where(band_id: @band.id)
+    @openings = @band.openings.all.where(band_id: @band.id)
     session[:band_id] = @band.id
   end
 
@@ -66,7 +66,4 @@ class BandsController < ApplicationController
     end
   end
 
-  def get_openings
-    @openings = BandInstrumentMusician.all.where({musician_id: nil})
-  end
 end
