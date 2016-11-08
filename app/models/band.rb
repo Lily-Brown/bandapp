@@ -11,6 +11,7 @@ class Band < ApplicationRecord
 
   # owner
   belongs_to :musician
+  alias_method :owner, :musician
 
   # membership in band w/ instrument
 	has_and_belongs_to_many :musicians, join_table: :band_instrument_musicians
