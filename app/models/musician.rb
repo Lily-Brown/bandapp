@@ -1,5 +1,5 @@
 class Musician < ApplicationRecord
-  has_attached_file :photo, :styles => { medium: "300x300>", thumb: "150x150>" }, :default_url => ":style/default-musician-photo.png"
+  has_attached_file :photo, :styles => { medium: "300x300>", thumb: "240x240>" }, :default_url => ":style/default-musician-photo.png"
   validates_attachment :photo,
   content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 

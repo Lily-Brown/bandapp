@@ -22,8 +22,8 @@ class BandsController < ApplicationController
   end
 
   def show
-    @members = get_members.all.where(band_id: @band.id)
-    @openings = get_openings.all.where(band_id: @band.id)
+    @members = @band.members.all.where(band_id: @band.id)
+    @openings = @band.openings.all.where(band_id: @band.id)
     session[:band_id] = @band.id
   end
 
@@ -60,17 +60,10 @@ class BandsController < ApplicationController
   end
 
   def is_owner
-    if current_musician != @band.musician
+    if current_musician != @band.owner
       flash[:error] = 'You do not have permission to perform this action'
       redirect_to root_path
     end
   end
 
-  def get_members
-    @members = BandInstrumentMusician.all.where.not({musician_id: nil})
-  end
-
-  def get_openings
-    @openings = BandInstrumentMusician.all.where({musician_id: nil})
-  end
 end

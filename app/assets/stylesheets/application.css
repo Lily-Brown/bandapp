@@ -27,24 +27,58 @@ html {
 
 body {
   position: relative;
-  background-color: #fff;
+  background-color: #ddd;
   min-height: 100%;
+  font-family: 'Open Sans', sans-serif;
   padding: 0 0 6rem;
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
 }
 
+/*
+Inputs and Buttons
+**************************************/
+
+button,
+input[type="button"],
+input[type="submit"] {
+  display: inline-block;
+  background-color: #555;
+  width: 100%;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: none;
+  padding: 20px 16px;
+  margin: 24px 0 0;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background-color: #000;
+  color: #fff;
+}
+
 .wrap {
+  background: #ddd;
   max-width: 100%;
   padding: 0;
   margin: 0 auto;
 }
 
 .content {
-  max-width: 960px;
+  max-width: 1000px;
   padding: 0 30px 30px;
-  margin: 40px auto;
+  margin: 0 auto;
 }
 
 .float-fix {
@@ -59,28 +93,16 @@ nav {
   width: 100%;
   padding: 0;
   margin: 0;
-  border-top: 2px solid #ddd;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid #999;
 }
 
 nav .wrap {
+  background: #fff;
   max-width: 980px;
   min-height: auto;
   padding: 15px 30px;
   margin: 0 auto;
   overflow: hidden;
-}
-
-nav li {
-  display: inline-block;
-  list-style-type: none;
-  font-size: 15px;
-  font-weight: normal;
-  padding: 0;
-}
-
-nav li:first-child {
-  padding-right: 40px;
 }
 
 .nav-logo {
@@ -101,20 +123,23 @@ nav li:first-child {
   float: right;
 }
 
-.account-nav li {
-  font-size: 15px;
-  padding: 0 10px;
-}
-
-.account-nav li:first-child {
-  padding-right: 10px;
-}
-
 nav ul {
   max-width: 240px;
   padding: 0;
-  margin: 0 0 0 28%;
+  margin: 0 0 0 32.5%;
   float: left;
+}
+
+nav li {
+  display: inline-block;
+  list-style-type: none;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 0;
+}
+
+nav li:first-child {
+  padding-right: 40px;
 }
 
 nav li a {
@@ -129,6 +154,15 @@ nav li a {
 nav li:hover,
 nav li a:hover {
   text-decoration: none;
+}
+
+.account-nav li {
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+.account-nav li:first-child {
+  padding-right: 10px;
 }
 
 /* For editable fields */
@@ -163,6 +197,8 @@ footer {
   background: #fff;
   width: 100%;
   text-align: center;
-  padding: 30px 0;
-  margin: 30px 0 0;
+  font-size: 12px;
+  padding: 25px 0;
+  margin: 0;
+  border-top: 1px solid #999;
 }
