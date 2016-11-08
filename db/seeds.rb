@@ -7,6 +7,7 @@ Instrument.create([
   { instrument_name: "Bass Guitar"},
   { instrument_name: "Cello"},
   { instrument_name: "Clarinet"},
+  { instrument_name: "Didgeridoo"},
   { instrument_name: "DJ"},
   { instrument_name: "Dobro"},
   { instrument_name: "Drums"},
@@ -15,10 +16,12 @@ Instrument.create([
   { instrument_name: "Flute"},
   { instrument_name: "Harmonica"},
   { instrument_name: "Harp"},
+  { instrument_name: "Kazoo"},
   { instrument_name: "Keyboard"},
   { instrument_name: "Lead Guitar"},
   { instrument_name: "Mandolin"},
   { instrument_name: "Other Percussion"},
+  { instrument_name: "Penny Whiste"}
   { instrument_name: "Piano"},
   { instrument_name: "Rhythm Guitar"},
   { instrument_name: "Saxophone"},
@@ -34,9 +37,6 @@ Instrument.create([
   { instrument_name: "Vocalist - Bass"},
   { instrument_name: "Vocalist - Soprano"},
   { instrument_name: "Vocalist - Tenor"},
-  { instrument_name: "Kazoo"},
-  { instrument_name: "Didgeridoo"},
-  { instrument_name: "Penny Whiste"}
 ])
 
 Musician.create([
@@ -72,6 +72,83 @@ Musician.create([
     password: "password",
     practice_frequency: "Every Day",
     gear: "EV N/D 767 mic, TC Helicon Vocal Live Play, assorted percussive tingtinklers, Gemeinhardt flute, Korg T2 keyboard workstation, Yamaha PSR-EW400 portable keyboard, Peavey KB 60 Amp, chords, stands, and Fender Passport small PA"
+  },
+  {
+    name: "Jenny Fromdablock",
+    genres: "Hip-hop, Jazz, Funk",
+    influences: "Beyonce, Chaka Khan, Whitney Houston",
+    bio: "I'm a singer looking for a funk or hip-hop band to join. I have been singing since the age of 4, I have a wide range and a lot of stage presence. ",
+    zip_code: "90318",
+    email: "user4@user.com",
+    password: "password",
+    practice_frequency: "1x per week",
+    gear: "My own mic and my voice, no PA unfortunately"
+  },
+  {
+    name: "Johnny Cash",
+    genres: "Country",
+    influences: "Hank Williams, Patsy Cline, Buck Owens",
+    bio: "I write country diddy's with attitude. I'm looking for folks to write and perform with, possibly tour. I have a deep, raspy voice and I write some pretty deep lyrics. I also wear black, all the time. I wear the black for the poor and the beaten down, livin' in the hopeless, hungry side of town. I wear it for the prisoner who has long paid for his crime, but is there because he's a victim of the times. I ideally would like to play music with folks who also wear black.",
+    zip_code: "92345",
+    email: "user5@user.com",
+    password: "password",
+    practice_frequency: "Every Day",
+    gear: "Lots of guitars, mostly acoustic."
+  },
+  {
+    name: "Skrillex",
+    genres: "Dubstep, EDM, Trap",
+    influences: "Prodigy, Aphex Twin, Marilyn Manson, Nine Inch Nails",
+    bio: "I've been playing with electronic music all of my life. I have ideas, all kinds of ideas. I'm looking to bounce ideas off with like-minded people. I hope to create new genres, new ways to experience music. I want to deconstruct and reconstruct. I think music needs to reach the next level and I want to find people to help this become a reality.",
+    zip_code: "94930",
+    email: "user6@user.com",
+    password: "password",
+    practice_frequency: "Every Day, all day",
+    gear: "a laptop, a brain, and a dream"
+  },
+  {
+    name: "Weird Al",
+    genres: "Pop, Satire-Rock",
+    influences: "Eastern-European polka bands, Jerry Lewis",
+    bio: "I am a fun loving guy who likes to poke fun at the establishment without taking myself too seriously. My instrument of choice is the accordian, but I also like to sing, and even rap sometimes!",
+    zip_code: "98987",
+    email: "user7@user.com",
+    password: "password",
+    practice_frequency: "Everyday",
+    gear: "My accordian, a great sense of humor, a full set of hair"
+  },
+  {
+    name: "Ziggy Stardust",
+    genres: "Glam Rock",
+    influences: "T-Rex, Blues",
+    bio: "Art party readymade sustainable, plaid vape bespoke heirloom single-origin coffee locavore typewriter. Poutine salvia blue bottle truffaut plaid. Raw denim pitchfork heirloom, sriracha lumbersexual chillwave jean shorts yr photo booth health goth pop-up meggings tilde prism. Craft beer copper mug pour-over chicharrones, freegan polaroid readymade authentic.",
+    zip_code: "98987",
+    email: "user8@user.com",
+    password: "password",
+    practice_frequency: "Everyday",
+    gear: "itsch narwhal cred, activated charcoal chia enamel pin chillwave snackwave affogato distillery tumblr post-ironic."
+  },
+  {
+    name: "Benny",
+    genres: "Pop",
+    influences: "music",
+    bio: "lyft kale chips kinfolk shabby chic celiac twee tofu viral etsy mlkshk kombucha. Celiac craft beer church-key, pug tbh pabst man bun bespoke literally poke normcore knausgaard. Locavore occupy snackwave, brooklyn raw denim messenger bag cold-pressed tofu VHS offal selvage kitsch sriracha. Mustache kinfolk readymade bushwick",
+    zip_code: "98987",
+    email: "user9@user.com",
+    password: "password",
+    practice_frequency: "Everyday",
+    gear: "Subway tile wolf vice"
+  },
+  {
+    name: "Gus Polinski",
+    genres: "Polka",
+    influences: "Eastern-European polka bands, Jerry Lewis",
+    bio: "I am a fun loving guy who likes to poke fun at the establishment without taking myself too seriously. My instrument of choice is the accordian, but I also like to sing, and even rap sometimes!",
+    zip_code: "98987",
+    email: "user10@user.com",
+    password: "password",
+    practice_frequency: "Everyday",
+    gear: "My accordian"
   }
 ])
 
@@ -145,5 +222,65 @@ Band.create([
     musician_id: 2,
     practice_frequency: "weekly",
     gear: "Fleet of Vintage accordians and high socks"
+  }
+])
+
+InstrumentMusician.create([
+  {
+    instrument_id: 1,
+    musician_id: 1
+  },
+  {
+    instrument_id: 2,
+    musician_id: 2
+  },
+  {
+    instrument_id: 3,
+    musician_id: 3
+  },
+  {
+    instrument_id: 4,
+    musician_id: 4
+  },
+  {
+    instrument_id: 5,
+    musician_id: 5
+  },
+  {
+    instrument_id: 6,
+    musician_id: 6
+  },
+  {
+    instrument_id: 7,
+    musician_id: 7
+  },
+  {
+    instrument_id: 8,
+    musician_id: 8
+  },
+  {
+    instrument_id: 9,
+    musician_id: 9
+  },
+  {
+    instrument_id: 10,
+    musician_id: 10
+  }
+])
+
+# create members
+BandInstrumentMusician.create([
+  {
+    instrument_id: 1,
+    band_id: 1,
+    musician_id: 1
+  }
+])
+
+# create openings
+BandInstrumentMusician.create([
+  {
+    instrument_id: 1,
+    band_id: 1
   }
 ])
