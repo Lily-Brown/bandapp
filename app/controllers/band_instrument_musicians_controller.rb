@@ -1,8 +1,6 @@
 class BandInstrumentMusiciansController < ApplicationController
-  before_action :is_owner, only: [:update]
-  before_action :is_owner_destroy, only: [:destroy]
-
-
+  before_action :is_owner, only: [:update, :destroy]
+  
   def new
     @member = BandInstrumentMusician.new
   end
@@ -43,14 +41,8 @@ class BandInstrumentMusiciansController < ApplicationController
   end
 
   def is_owner
-    if current_musician != BandInstrumentMusician.find(params['id'].to_i).band.owner
-      flash[:error] = 'You do not have permission to perform this action'
-      redirect_to :back
-    end
-  end
-
-  def is_owner_destroy
-    if current_musician != BandInstrumentMusician.find(params['member_id'].to_i).band.owner
+    member_id = params['member_id'].nil? ? params['id'].to_i : params['member_id'].to_i
+    if current_musician != BandInstrumentMusician.find(member_id).band.owner
       flash[:error] = 'You do not have permission to perform this action'
       redirect_to :back
     end
