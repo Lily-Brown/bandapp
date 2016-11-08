@@ -56,7 +56,7 @@ class BandsController < ApplicationController
   end
 
   def update_band_params
-    params.require(:band).permit(:band_name,:genres,:influences,:bio,:zip_code,:gear,:photo,:mp3,:slug)
+    params.require(:band).permit(:band_name,:genres, :audio_clip, :influences,:bio,:zip_code,:gear,:photo,:mp3,:slug)
   end
 
   def is_owner
