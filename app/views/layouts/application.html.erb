@@ -40,23 +40,19 @@
 
     <div class="wrap">
 
-      <% if flash[:error] %>
-      <div class="container small-container">
-        <div class="alert alert-danger">
-          <%= flash[:error] %>
+      <% flash.each do |name, msg| %>
+        <div class="container small-container">
+          <% if name == 'error' %>
+            <div class="alert alert-danger">
+          <% else %>
+            <div class="alert alert-success">
+          <% end %>  
+              <%= msg %>
+            </div>
         </div>
-      </div>
       <% end %>
 
-      <% if flash[:success] %>
-      <div class="container small-container">
-        <div class="alert alert-success">
-          <%= flash[:success] %>
-        </div>
-      </div>
-      <% end %>
-
-        <%= yield %>
+      <%= yield %>
 
     </div>
 
