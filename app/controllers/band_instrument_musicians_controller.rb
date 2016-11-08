@@ -1,14 +1,19 @@
 class BandInstrumentMusiciansController < ApplicationController
   before_action :is_owner, only: [:update, :destroy]
-  
+
   def new
     @member = BandInstrumentMusician.new
   end
 
   def create
     @member = BandInstrumentMusician.new(new_member_params)
-    @member.save(validate: false)
-    redirect_to band_path(session[:band_id])
+    if @member.save(validate: false)
+      flash[:success] = "Your opening has been created!"
+      redirect_to band_path(session[:band_id])
+    else
+      flash[:error] = "Error creating your opening."
+      render :new
+    end
   end
 
   def edit
@@ -19,8 +24,13 @@ class BandInstrumentMusiciansController < ApplicationController
     @opening = BandInstrumentMusician.find(params[:id])
     musician = Musician.find(session[:musician_add])
     @opening.musician = musician
-    @opening.save
-    redirect_to band_path(@opening.band)
+    if @opening.save
+      flash[:success] = "#{musician.name} has been added to your band!"
+      redirect_to band_path(@opening.band)
+    else
+      flash[:error] = "Error adding musician to band."
+      redirect_to musician_path(musician)
+    end
   end
 
   def destroy
