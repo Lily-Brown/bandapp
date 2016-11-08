@@ -1,3 +1,78 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.home-title {
+	background: #000;
+	position: relative;
+	top: 420px;
+	left: 0;
+	color: #fff;
+	font-size: 38px;
+	line-height: 1.6;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+.start-your-band-today {
+	background: image-url('start-your-band-today2.png') top center no-repeat;
+	background-size: cover;
+	display: block;
+	width: 100%;
+	min-height: 460px;
+	padding: 0;
+	margin: 0;
+}
+
+.home-find-container {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.find-box {
+  display: block;
+  width: 49.999%;
+  min-height: 380px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  padding: 160px 0 0;
+  margin: 0;
+  float: left;
+}
+
+.find-musicians {
+  background: image-url('find-musicians.png') top center no-repeat;
+  background-size: cover;
+  border-right: 2px solid #fff;
+ }
+
+.find-bands {
+  background: image-url('find-bands.png') top center no-repeat;
+  background-size: cover;
+}
+
+/* Media Queries
+--------------------------------------------- */
+
+@media only screen and (max-width: 660px) {
+
+	.home-title {
+		font-size: 26px;
+	}
+
+  .find-musicians {
+  	width: 100%;
+  }
+
+  .find-bands {
+  	width: 100%;
+  }
+
+}

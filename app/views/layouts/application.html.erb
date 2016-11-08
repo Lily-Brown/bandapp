@@ -13,41 +13,47 @@
 
     <!-- Start Nav -->
     <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Musicians", musicians_path %></li>
-        <li><%= link_to "Bands", bands_path %></li>
-        <% if current_musician %>
-          <li><%= link_to "Profile", musician_path(current_musician) %></li>
-          <li><%= link_to "Log Out", logout_path %></li>
-        <% else %>
-          <li><%= link_to "Create Account", new_musician_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
-        <% end %>
-      </ul>
+      <div class="wrap">
+        <a href="/" class="nav-logo">BandApp</a>
+        <ul>
+          <li><%= link_to "Find A Musician", musicians_path %></li>
+          <li><%= link_to "Find A Band", bands_path %></li>
+        </ul>
+        <ul class="account-nav">
+          <% if current_musician %>
+            <li><%= link_to "Profile", musician_path(current_musician) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+          <% else %>
+            <li><%= link_to "Create Account", new_musician_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
+        </ul>
+      </div>
     </nav><!-- End Nav -->
 
     <div class="wrap">
 
-    <% if flash[:error] %>
-    <div class="container small-container">
-      <div class="alert alert-danger">
-        <%= flash[:error] %>
+      <% if flash[:error] %>
+      <div class="container small-container">
+        <div class="alert alert-danger">
+          <%= flash[:error] %>
+        </div>
       </div>
-    </div>
-    <% end %>
+      <% end %>
 
-    <% if flash[:success] %>
-    <div class="container small-container">
-      <div class="alert alert-success">
-        <%= flash[:success] %>
+      <% if flash[:success] %>
+      <div class="container small-container">
+        <div class="alert alert-success">
+          <%= flash[:success] %>
+        </div>
       </div>
-    </div>
-    <% end %>
+      <% end %>
 
-      <%= yield %>
+        <%= yield %>
 
     </div>
+
+  <footer>&copy 2016 BandApp</footer>
 
   </body>
 </html>
