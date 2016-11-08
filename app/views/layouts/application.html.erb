@@ -7,6 +7,8 @@
     <!-- Application Scripts -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="assets/javascripts/responsive-nav/responsive-nav.css">
+    <script src="assets/javascripts/responsive-nav/responsive-nav.js"></script>
 
     <!-- MP3 Player -->
     <%= mp3_player_headers %>
@@ -18,25 +20,45 @@
 
   <body>
 
+  <header>
     <!-- Start Nav -->
-    <nav>
+    <div class="responsive-menu-container">
+    <nav class="nav-collapse">
       <div class="wrap">
         <a href="/" class="nav-logo">BandApp</a>
         <ul>
-          <li><%= link_to "Musicians", musicians_path %></li>
-          <li><%= link_to "Bands", bands_path %></li>
+          <li><%= link_to "Musicians", musicians_path, class: 'nav-collapse-a' %></li>
+          <li><%= link_to "Bands", bands_path, class: 'nav-collapse-a' %></li>
         </ul>
         <ul class="account-nav">
           <% if current_musician %>
-            <li><%= link_to "Profile", musician_path(current_musician) %></li>
-            <li><%= link_to "Log Out", logout_path %></li>
+            <li><%= link_to "Profile", musician_path(current_musician), class: 'nav-collapse-a' %></li>
+            <li><%= link_to "Log Out", logout_path, class: 'nav-collapse-a' %></li>
           <% else %>
-            <li><%= link_to "Create Account", new_musician_path %></li>
-            <li><%= link_to "Log In", login_path %></li>
+            <li><%= link_to "Create Account", new_musician_path, class: 'nav-collapse-a' %></li>
+            <li><%= link_to "Log In", login_path, class: 'nav-collapse-a' %></li>
           <% end %>
         </ul>
       </div>
+
+        <!-- Start Responsive Menu -->
+
+        <ul class="responsive-menu">
+          <li><a href="/" class="nav-logo">BandApp</a></li>
+          <li><%= link_to "Musicians", musicians_path, class: 'nav-collapse-a' %></li>
+          <li><%= link_to "Bands", bands_path, class: 'nav-collapse-a' %></li>
+          <% if current_musician %>
+            <li><%= link_to "Profile", musician_path(current_musician), class: 'nav-collapse-a' %></li>
+            <li><%= link_to "Log Out", logout_path, class: 'nav-collapse-a' %></li>
+          <% else %>
+            <li><%= link_to "Create Account", new_musician_path, class: 'nav-collapse-a' %></li>
+            <li><%= link_to "Log In", login_path, class: 'nav-collapse-a' %></li>
+          <% end %>
+        </ul><!-- End Responsive Menu -->
+
     </nav><!-- End Nav -->
+  </div>
+</header>
 
     <div class="wrap">
 
