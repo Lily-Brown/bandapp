@@ -27,11 +27,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# Best_in_place for editable fields on profiles
-# gem 'best_in_place', '~> 3.0.1'
-# # Allow for editable fields in groups
-# gem 'edit_mode'
-
 gem 'paperclip'
 gem 'friendly_id', '~> 5.1.0'
 # Use Capistrano for deployment
