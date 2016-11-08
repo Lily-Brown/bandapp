@@ -49,17 +49,26 @@ https://app.moqups.com/k.bushman/ZFgDqhSRw6/view
 
 ### Day 3 (11/4)
 - Group: Band Show, Index, Edit, Delete
-- Group: Set Up RSPEC
 - Group: Band/Instrument/Musician Relationships
+- Group: Auth
+
+### Weekend
+
+- Group: More Auth
+- Ryan: Instrument Index, Show
+- Lily: Toggle Edit on Band/Musician Show
+- Lynette: Paperclip for Band/Musician Images
+- Kenny: Paperclip for Band/Musician Audio Clips
 
 ### Day 4 (11/7)
-- Group: Heroku Creation
-- Group: Instrument Index
-- Group: Messaging/Mailbox
+- Group: Refine Band/Instrument/Musician Relationships
+- Group: Set Up RSPEC
 
 ### Day 5 (11/8)
-- Pair Programming (?/?): Styles
-- Pair Programming (?/?): Catch-Up
+- Ryan: Heroku Creation, Seed Data
+- Lynette: Seed Data, About Us
+- Kenny: Styling
+- Lily: Refactoring Based on Issues, Styling
 
 ### Day 6 (11/9)
 - Group: Presentation, Final Touches, Deployment
