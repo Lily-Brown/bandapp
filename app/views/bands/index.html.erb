@@ -1,8 +1,24 @@
-<% @bands.each do |band| %>
-<div>
-  <%= image_tag band.photo(:thumb) %>
-  <p><%= link_to band.band_name, band_path(band) %></p>
-  <p><%= band.genres %></p>
-  <p><%= band.bio %></p>
-</div>
-<% end %>
+<div class="content">
+
+  <div class="box-container">
+
+    <div class="box-list">
+      <% @bands.each do |band| %>
+        <div class="box-outer">
+          <div class="box-inner">
+
+            <div>
+              <div class="index-medium-thumbnail"><%= link_to( image_tag(band.photo(:thumb)), band_path(band)) %>
+              </div>
+              <%= link_to band.band_name, band_path(band), :class => 'index-name' %>
+              <p class="box-info"><span class="box-label">Genres</span>: <%= truncate(band.genres, length: 54) %></p>
+              <p class="box-info"><span class="box-label">Influences</span>: <%= truncate(band.influences, length: 54) %></p>
+              <p class="box-info"><span class="box-label">Location</span>: <%= band.zip_code %></p>
+            </div>
+          </div><!-- End Band Inner Box -->
+        </div><!-- End Band Outer Box -->
+      <% end %>
+    </div><!-- End Band List -->
+  </div><!-- End Band Container -->
+
+</div><!-- End Content -->
