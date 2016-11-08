@@ -1,10 +1,26 @@
-<p><%= link_to 'find a musician by instrument', instruments_path %></p>
+<div class="content">
+	<p class="center-find-instruments"><%= link_to 'Find Musician By Instrument', instruments_path, :class => 'find-instruments' %></p>
 
-<% @musicians.each do |musician| %>
-<div>
-  <%= image_tag musician.photo(:thumb) %>
-  <p><%= link_to musician.name, musician_path(musician) %></p>
-  <p><%= musician.genres %></p>
-  <p><%= musician.bio %></p>
-</div>
-<% end %>
+	<div class="box-container">
+
+		<div class="box-list">
+			<% @musicians.each do |musician| %>
+				<div class="box-outer">
+					<div class="box-inner">
+
+						<div>
+						  <div class="index-medium-thumbnail"><%= link_to( image_tag(musician.photo(:thumb)), musician_path(musician)) %>
+						  </div>
+						  <%= link_to musician.name, musician_path(musician), :class => 'index-name' %>
+						  <p class="box-info"><span class="box-label">Genres</span>: <%= truncate(musician.genres, length: 54) %></p>
+						  <p class="box-info"><span class="box-label">Influences</span>: <%= truncate(musician.influences, length: 54) %></p>
+						  <p class="box-info"><span class="box-label">Location</span>: <%= musician.zip_code %></p>
+						</div>
+					</div><!-- End Musician Inner Box -->
+				</div><!-- End Musician Outer Box -->
+			<% end %>
+		</div><!-- End Musician List -->
+	</div><!-- End Musician Container -->
+
+</div><!-- End Content -->
+
