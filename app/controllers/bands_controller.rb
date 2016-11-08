@@ -60,7 +60,7 @@ class BandsController < ApplicationController
   end
 
   def is_owner
-    if current_musician != @band.musician
+    if current_musician != @band.owner
       flash[:error] = 'You do not have permission to perform this action'
       redirect_to root_path
     end
