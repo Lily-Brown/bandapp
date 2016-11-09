@@ -114,6 +114,10 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+.submit-button {
+  max-width: 245px;
+}
+
 
 button:hover,
 .button:hover,
@@ -252,6 +256,15 @@ Layout
   background: #fff;
   max-width: 920px;
   padding: 30px 30px 40px;
+  margin: 60px auto;
+  overflow: hidden;
+}
+
+.form-content-white {
+  background: #fff;
+  max-width: 380px;
+  text-align: center;
+  padding: 30px 40px;
   margin: 60px auto;
   overflow: hidden;
 }
