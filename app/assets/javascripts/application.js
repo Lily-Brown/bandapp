@@ -27,10 +27,12 @@ $( document ).ready(function() {
     $('.toggle').toggleClass('btn_show btn_hide')
     $('.save').removeAttr('disabled');
   }
-  
+
   save_form = function() {
     $('form').submit();
     toggle_fields();
   }
+
+  var nav = responsiveNav(".nav-collapse");
 
 });

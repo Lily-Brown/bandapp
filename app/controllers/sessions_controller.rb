@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @musician = Musician.confirm(musician_params)
     if @musician
       login(@musician)
-      flash[:notice] = "Successfully logged in."
+      flash[:success] = "Successfully logged in."
       redirect_to @musician
     else
       flash[:error] = "Incorrect email or password."

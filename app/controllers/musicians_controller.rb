@@ -46,7 +46,6 @@ class MusiciansController < ApplicationController
     redirect_to root_path
   end
 
-
   private
 
   def login_musician_params
