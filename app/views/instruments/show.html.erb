@@ -1,16 +1,20 @@
-<h1>Instruments Show</h1>
 
-<div>
-  <p><%= @instrument.instrument_name %></p>
-  <p><%= @instrument.id %></p>
-</div>
-
-
-<div>
-  <% @instrument.instrument_musicians.each do |instrument_musician| %>
-    <% instrument_musician.musician.name %>
-    <li>
-      <%= link_to instrument_musician.musician.name, musician_path(instrument_musician.musician) %>
-    </li><br>
-  <% end %>
+<h1><%= @instrument.instrument_name %> Players</h1>
+<div class="box-container"
+  <div class="box-list">
+    <% @instrument.instrument_musicians.each do |instrument_musician| %>
+      <div class="box-outer">
+        <div class="box-inner">
+          <div>
+            <div class="index-medium-thumbnail"><%= link_to( image_tag(instrument_musician.musician.photo(:thumb)), musician_path(instrument_musician.musician)) %>
+            </div>
+            <%= link_to instrument_musician.musician.name, musician_path(instrument_musician.musician), :class => 'index-name' %>
+            <p class="box-info"><span class="box-label">Genres</span>: <%= truncate(instrument_musician.musician.genres, length: 54) %></p>
+            <p class="box-info"><span class="box-label">Influences</span>: <%= truncate(instrument_musician.musician.influences, length: 54) %></p>
+            <p class="box-info"><span class="box-label">Location</span>: <%= instrument_musician.musician.zip_code %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
