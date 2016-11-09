@@ -7,8 +7,6 @@
     <!-- Application Scripts -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="assets/javascripts/responsive-nav/responsive-nav.css">
-    <script src="assets/javascripts/responsive-nav/responsive-nav.js"></script>
 
     <!-- MP3 Player -->
     <%= mp3_player_headers %>
@@ -20,61 +18,45 @@
 
   <body>
 
-  <header>
     <!-- Start Nav -->
-    <div class="responsive-menu-container">
-    <nav class="nav-collapse">
+    <nav>
       <div class="wrap">
         <a href="/" class="nav-logo">BandApp</a>
         <ul>
-          <li><%= link_to "Musicians", musicians_path, class: 'nav-collapse-a' %></li>
-          <li><%= link_to "Bands", bands_path, class: 'nav-collapse-a' %></li>
+          <li><%= link_to "Musicians", musicians_path %></li>
+          <li><%= link_to "Bands", bands_path %></li>
         </ul>
         <ul class="account-nav">
           <% if current_musician %>
-            <li><%= link_to "Profile", musician_path(current_musician), class: 'nav-collapse-a' %></li>
-            <li><%= link_to "Log Out", logout_path, class: 'nav-collapse-a' %></li>
+            <li><%= link_to "Profile", musician_path(current_musician) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
           <% else %>
-            <li><%= link_to "Create Account", new_musician_path, class: 'nav-collapse-a' %></li>
-            <li><%= link_to "Log In", login_path, class: 'nav-collapse-a' %></li>
+            <li><%= link_to "Create Account", new_musician_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
           <% end %>
         </ul>
       </div>
-
-        <!-- Start Responsive Menu -->
-
-        <ul class="responsive-menu">
-          <li><a href="/" class="nav-logo">BandApp</a></li>
-          <li><%= link_to "Musicians", musicians_path, class: 'nav-collapse-a' %></li>
-          <li><%= link_to "Bands", bands_path, class: 'nav-collapse-a' %></li>
-          <% if current_musician %>
-            <li><%= link_to "Profile", musician_path(current_musician), class: 'nav-collapse-a' %></li>
-            <li><%= link_to "Log Out", logout_path, class: 'nav-collapse-a' %></li>
-          <% else %>
-            <li><%= link_to "Create Account", new_musician_path, class: 'nav-collapse-a' %></li>
-            <li><%= link_to "Log In", login_path, class: 'nav-collapse-a' %></li>
-          <% end %>
-        </ul><!-- End Responsive Menu -->
-
     </nav><!-- End Nav -->
-  </div>
-</header>
 
     <div class="wrap">
 
-      <% flash.each do |name, msg| %>
-        <div class="container small-container">
-          <% if name == 'error' %>
-            <div class="alert alert-danger">
-          <% else %>
-            <div class="alert alert-success">
-          <% end %>  
-              <%= msg %>
-            </div>
+      <% if flash[:error] %>
+      <div class="container small-container">
+        <div class="alert alert-danger">
+          <%= flash[:error] %>
         </div>
+      </div>
       <% end %>
 
-      <%= yield %>
+      <% if flash[:success] %>
+      <div class="container small-container">
+        <div class="alert alert-success">
+          <%= flash[:success] %>
+        </div>
+      </div>
+      <% end %>
+
+        <%= yield %>
 
     </div>
 
