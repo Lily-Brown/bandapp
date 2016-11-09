@@ -41,8 +41,13 @@ h1 {
   margin: 0 0 20px;
 }
 
-ul {
+ul.no-bullet {
   list-style-type: none;
+}
+
+ul.instrument-list li {
+  display: inline;
+  padding-right: 15px;
 }
 
 /*

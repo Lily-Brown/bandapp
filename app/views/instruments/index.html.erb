@@ -1,9 +1,13 @@
 <div class="content">
-  <h2>Find Musicians by Instrument</h2>
-  <div class="box-container">
-    <div class="box-list">
+  <h2 class="instrument-title">Find Musicians by Instrument</h2>
+  <div class="inst-box-container">
+    <div class="inst-box-list">
       <% @instruments.each do |instrument| %>
-        <p class="find-instruments inst"><%= link_to instrument.instrument_name, instrument_path(instrument) %></p>
+      	<div class="inst-box-outer">
+      		<div class="inst-box-inner">
+        		<p class="find-instruments inst"><%= link_to instrument.instrument_name, instrument_path(instrument) %></p>
+        	</div>
+        </div>
       <% end %>
     </div>
   </div>
