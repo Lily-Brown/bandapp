@@ -141,6 +141,25 @@ label {
 }
 
 /*
+Flash Messages
+*****************************************/
+
+.alert {
+  width: 100%;
+  padding: 1% 0;
+  text-align: center;
+  color: white;
+}
+
+.alert-danger {
+  background-color: #B7030F;
+}
+
+.alert-success {
+  background-color: #18B000;
+}
+
+/*
 Toggle Input Fields
 *****************************************/
 
