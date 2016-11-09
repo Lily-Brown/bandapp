@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
   post "/sessions", to: "sessions#create"
-  get "/aboutus", to: "welcome#index"
+  get "/about-us", to: "welcome#index"
 
   resources :musicians
   resources :instruments

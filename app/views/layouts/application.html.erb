@@ -4,6 +4,9 @@
     <title>Bandapp</title>
     <%= csrf_meta_tags %>
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <!-- Application Scripts -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -21,7 +24,7 @@
     <!-- Start Nav -->
     <nav>
       <div class="wrap">
-        <a href="/" class="nav-logo">BandApp</a>
+        <a href="/" class="nav-logo">BandWagon</a>
         <ul>
           <li><%= link_to "Musicians", musicians_path %></li>
           <li><%= link_to "Bands", bands_path %></li>
@@ -60,7 +63,12 @@
 
     </div>
 
-  <footer>&copy; 2016 BandApp</footer>
+  <footer>
+      <p>&copy; 2016 BandWagon <span class="word-space">|</span> <%= link_to 'About Us', about_us_path %></p>
+  </footer>
+
+
+
 
   </body>
 </html>

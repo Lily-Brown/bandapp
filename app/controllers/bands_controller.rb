@@ -22,8 +22,8 @@ class BandsController < ApplicationController
   end
 
   def show
-    @members = @band.members.all.where(band_id: @band.id)
-    @openings = @band.openings.all.where(band_id: @band.id)
+    @members = @band.members(@band.id)
+    @openings = @band.openings(@band.id)
     session[:band_id] = @band.id
   end
 

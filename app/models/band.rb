@@ -1,5 +1,5 @@
 class Band < ApplicationRecord
-  has_attached_file :photo, :styles => { medium: "300x300>", thumb: "150x150>" }, :default_url => ":style/default-band-photo.png"
+  has_attached_file :photo, :styles => { medium: "300x300>", thumb: "240x240>" }, :default_url => ":style/default-band-photo.png"
   validates_attachment :photo,
     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
@@ -20,12 +20,12 @@ class Band < ApplicationRecord
   extend FriendlyId
     friendly_id :band_name, use: :slugged
 
-  def members 
-    BandInstrumentMusician.all.where.not({musician_id: nil})
+  def members(band_id)
+    BandInstrumentMusician.all.where.not({musician_id: nil}).all.where(band_id: band_id)
   end
 
-  def openings
-    BandInstrumentMusician.all.where({musician_id: nil})
+  def openings(band_id)
+    BandInstrumentMusician.all.where({musician_id: nil}).all.where(band_id: band_id)
   end
 
 end
