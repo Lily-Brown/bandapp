@@ -125,3 +125,17 @@
   margin: 0 auto;
   overflow: hidden;
 }
+
+@media only screen and (max-width: 648px) {
+
+  .about-us-box-outer {
+    display: block;
+    width: 249px;
+    margin: 0 auto 40px;
+  }
+
+  .about-us-box-inner {
+    padding: 0 0 20px;
+    margin: 0 auto;
+  }
+}
