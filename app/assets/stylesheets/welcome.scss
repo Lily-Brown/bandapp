@@ -4,9 +4,9 @@
 
 
 .home-title {
-	background: #000;
+
 	position: relative;
-	top: 320px;
+	top: 280px;
 	left: 0;
 	color: #fff;
 	font-size: 38px;
@@ -17,7 +17,7 @@
 }
 
 .start-your-band-today {
-	background: image-url('start-your-band.jpg') top center no-repeat;
+	background: image-url('home-background.jpg') top center no-repeat;
 	background-size: cover;
 	display: block;
 	width: 100%;
@@ -28,7 +28,7 @@
 
 .home-find-container {
   width: 100%;
-  padding: 0;
+  padding: 0 0 42px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -36,7 +36,7 @@
 .find-box {
   display: block;
   width: 49.999%;
-  min-height: 380px;
+  height: 380px;
   font-size: 30px;
   font-weight: bold;
   color: #fff;
