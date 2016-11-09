@@ -30,7 +30,7 @@ body {
   background-color: #ddd;
   min-height: 100%;
   font-family: 'Open Sans', sans-serif;
-  padding: 0 0 6rem;
+  padding: 0;
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
@@ -77,7 +77,7 @@ input[type="submit"]:hover {
 
 .content {
   max-width: 1000px;
-  padding: 0 30px 30px;
+  padding: 0 30px 60px;
   margin: 0 auto;
 }
 
@@ -88,27 +88,17 @@ input[type="submit"]:hover {
   overflow: hidden;
 }
 
-header {
+nav {
+  background: #fff;
   width: 100%;
-  background: #fff;
-}
-
-/* ------------------------------------------
-  NAVIGATION STYLES
-  (+ responsive-nav.css file is loaded in the <head>)
---------------------------------------------- */
-
-.nav-collapse {
-  background: #fff;
-  max-width: 100%;
   padding: 0;
   margin: 0;
   border-bottom: 1px solid #999;
 }
 
-.nav-collapse .wrap {
+nav .wrap {
   background: #fff;
-  max-width: 900px;
+  max-width: 980px;
   min-height: auto;
   padding: 15px 30px;
   margin: 0 auto;
@@ -127,15 +117,20 @@ header {
   margin: 0;
 }
 
-.nav-collapse ul {
-  display: inline-block;
+.account-nav {
+  padding: 0;
+  margin: 0;
+  float: right;
+}
+
+nav ul {
   max-width: 240px;
   padding: 0;
-  margin: 0 0 0 32%;
+  margin: 0 0 0 32.5%;
   float: left;
 }
 
-.nav-collapse li {
+nav li {
   display: inline-block;
   list-style-type: none;
   font-size: 15px;
@@ -143,11 +138,11 @@ header {
   padding: 0;
 }
 
-.nav-collapse li:first-child {
+nav li:first-child {
   padding-right: 40px;
 }
 
-.nav-collapse li a {
+nav li a {
   color: #000;
   text-decoration: none;
   padding: 0;
@@ -156,14 +151,9 @@ header {
   cursor: pointer;
 }
 
-.nav-collapse li:hover,
-.nav-collapse li a:hover {
+nav li:hover,
+nav li a:hover {
   text-decoration: none;
-}
-
-.account-nav {
-  float: right !important;
-  margin: 0 !important;
 }
 
 .account-nav li {
@@ -173,131 +163,6 @@ header {
 
 .account-nav li:first-child {
   padding-right: 10px;
-}
-
-.js .nav-collapse {
-  clip: rect(0 0 0 0);
-  max-height: 0;
-  position: absolute;
-  display: block;
-  overflow: hidden;
-  zoom: 1;
-}
-
-.nav-collapse.opened {
-  max-height: 9999px;
-}
-
-.nav-toggle {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-@media screen and (min-width: 700px) {
-  .js .nav-collapse {
-    position: relative;
-  }
-  .js .nav-collapse.closed {
-    max-height: none;
-  }
-  .nav-toggle {
-    display: none;
-  }
-  .responsive-menu {
-    display: none !important;
-  }
-}
-
-@media screen and (max-width: 700px) {
-
-  .nav-collapse .wrap {
-    display: none;
-  }
-
-  .nav-logo {
-    float: none !important;
-  }
-
-  .responsive-menu-container {
-    width: 100%;
-    background: #fff;
-  }
-
-  .responsive-menu {
-    float: none;
-    display: block !important;
-    width: 100%
-  }
-
-  .nav-collapse ul {
-    margin: 0 0 0 20px !important;
-  }
-
-  .responsive-menu li {
-    display: block !important;
-    width: 100%;
-    padding: 15px 0 !important;
-  }
-
-}
-
-/* ------------------------------------------
-  NAVIGATION TOGGLE STYLES
-  (+ responsive-nav.css file is loaded in the <head>)
---------------------------------------------- */
-
-.nav-toggle {
-  position: fixed;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-decoration: none;
-  text-indent: -999px;
-  position: relative;
-  overflow: hidden;
-  width: 70px;
-  height: 55px;
-  float: right;
-}
-
-/*.nav-toggle:active {
-  background: #fff;
-  height: 280px;
-}*/
-
-.nav-toggle:before {
-  color: #999; /* Edit this to change the icon color */
-  font-family: "responsivenav", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  font-size: 40px;
-  text-transform: none;
-  position: absolute;
-  content: "≡";
-  text-indent: 0;
-  text-align: center;
-  line-height: 55px;
-  speak: none;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.nav-toggle.active::before {
-  font-size: 24px;
-  content:"x";
-  height: 270px !important;
-  background: #fff;
 }
 
 /* For editable fields */
