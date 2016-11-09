@@ -53,9 +53,11 @@ https://app.moqups.com/k.bushman/ZFgDqhSRw6/view
 
 ### Adding Instrument to Musician - Challenge of collection_check_boxes input attriubtes
 ```
-<%= f.collection_check_boxes( :instrument_ids, Instrument.all, :id, :instrument_name, {:prompt => "Please Select a Sector"}, {:multiple => true}) do |b| %>
-  <%= b.label class:"label-checkbox" do%>
-  <%= b.check_box + b.text %>
+<%= form_for(@musician,url: musician_path) do |f| %>
+...
+  <%= f.collection_check_boxes( :instrument_ids, Instrument.all, :id, :instrument_name, {:prompt => "Please Select a Sector"},     {:multiple => true}) do |b| %>
+    <%= b.label class:"label-checkbox" do%>
+    <%= b.check_box + b.text %>
   <% end %>
 <% end %>
 ```
