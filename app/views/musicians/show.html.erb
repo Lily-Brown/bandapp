@@ -8,7 +8,7 @@
       </div>
 
       <% if current_musician == @musician %>
-        <%= link_to 'Edit', edit_musician_path, class: 'button' %>
+        <%= link_to 'Edit Profile', edit_musician_path, class: 'button' %>
       <% else %>
         <a class="button" href="mailto:<%= @musician.email %>">Send Message</a>
       <% end %>
