@@ -8,8 +8,8 @@
       </div>
 
       <% if current_musician == @band.owner %>
-        <p><%= link_to 'Edit', edit_band_path, class: 'button' %></p>
-        <p><%= link_to 'Delete', band_path, class: 'button', method: :delete, data: { confirm: 'Are you sure you want to delete this band?' } %></p>
+        <p><%= link_to 'Edit Profile', edit_band_path, class: 'button' %></p>
+        <p><%= link_to 'Delete Profile', band_path, class: 'button', method: :delete, data: { confirm: 'Are you sure you want to delete this band?' } %></p>
       <% else %>
         <a class="button" href="mailto:<%= @band.owner.email %>">Send Message</a>
       <% end %>
@@ -45,7 +45,7 @@
       <h3>Members:</h3>
       <% @members.each do |m| %>
         <p>
-          <%= m.musician.name %> - <%= m.instrument.instrument_name %>
+          <%= link_to m.musician.name, musician_path(m.musician) %> - <%= m.instrument.instrument_name %>
           <% if current_musician == @band.owner %>
             <%= link_to 'delete', band_instrument_musician_path(:member_id => m.id), method: :delete, class: 'delete-button' %>
           <% end %>
@@ -56,7 +56,7 @@
         <h3>Openings:</h3>
         <% @openings.each do |o| %>
           <p>
-            <%= o.instrument.instrument_name %> Player
+            <%= link_to o.instrument.instrument_name, instrument_path(o.instrument) %>
             <% if current_musician == @band.owner %>
               <%= link_to 'delete', band_instrument_musician_path(:member_id => o.id), method: :delete, class: 'delete-button' %>
             <% end %>

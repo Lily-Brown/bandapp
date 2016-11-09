@@ -135,9 +135,14 @@ input[type="button"]:hover {
   text-decoration: none;
 }
 
-.musician-button:hover,
-.create-band-button:hover {
+.musician-button:hover {
   background-color: #424cbd;
+  color: #fff;
+  text-decoration: none;
+}
+
+.create-band-button:hover {
+  background-color: #9a1719;
   color: #fff;
   text-decoration: none;
 }
