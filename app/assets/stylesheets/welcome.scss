@@ -47,6 +47,11 @@
   float: left;
 }
 
+.find-box:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 .find-musicians {
   background: image-url('find-musicians.png') top center no-repeat;
   background-size: cover;
@@ -85,7 +90,8 @@
 }
 
 .about-us-pic-container {
-  margin: 40px;
+  max-width: 600px;
+  margin: 40px auto;
 }
 
 .about-us-box-outer {
@@ -95,6 +101,10 @@
   margin: 0 40px 40px;
   vertical-align: top;
   border: 2px solid #e5e5e5;
+}
+
+.last {
+  margin: 0 0 40px;
 }
 
 .about-us-box-inner {

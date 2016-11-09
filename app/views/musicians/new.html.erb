@@ -5,16 +5,16 @@
   <%= form_for @musician do |f| %>
     <div class="container-gray">
       <div class="input-field">
-        <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
+        <%= f.text_field :name, placeholder: "Name" %>
       </div>
       <div class="input-field">
-        <%= f.email_field :email, placeholder: "Email", class: "form-control" %>
+        <%= f.email_field :email, placeholder: "Email" %>
       </div>
       <div class="input-field">
-        <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+        <%= f.password_field :password, placeholder: "Password" %>
       </div>
       <div class="input-field">
-        <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control" %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
       </div>
       <%= f.submit "Sign Up", class: "btn btn-primary" %>
     </div>
