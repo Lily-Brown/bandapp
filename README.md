@@ -49,7 +49,7 @@ https://app.moqups.com/k.bushman/ZFgDqhSRw6/view
 
 ## Some Challenges
 
-Adding Instrument to Musician
+### Adding Instrument to Musician - Challenge of collection_check_boxes input attriubtes
 ```
 <%= f.collection_check_boxes( :instrument_ids, Instrument.all, :id, :instrument_name, {:prompt => "Please Select a Sector"}, {:multiple => true}) do |b| %>
   <%= b.label class:"label-checkbox" do%>
@@ -57,38 +57,45 @@ Adding Instrument to Musician
   <% end %>
 <% end %>
 ```
-Creating Triple Join Model Relationships
+### Creating Triple Join Model Relationships - Accessing Triple Join Table
 ```
 class BandInstrumentMusiciansController < ApplicationController
-  before_action :is_owner, only: [:update, :destroy]
-```
-```
-  def update
-    @opening = BandInstrumentMusician.find(params[:id])
-    musician = Musician.find(session[:musician_add])
-    @opening.musician = musician
-    if @opening.save
-      flash[:success] = "#{musician.name} has been added to your band!"
-      redirect_to band_path(@opening.band)
-    else
-      flash[:error] = "Error adding musician to band."
-      redirect_to musician_path(musician)
-    end
+ 
+ def create
+    @member = BandInstrumentMusician.new(new_member_params)
+    # ... 
   end
 ```
 ```
   private
 
-  def is_owner
-  member_id = params['member_id'].nil? ? params['id'].to_i : params['member_id'].to_i
-  if current_musician != BandInstrumentMusician.find(member_id).band.owner
-    flash[:error] = 'You do not have permission to perform this action'
-    redirect_to :back
+  def new_member_params
+    params.require(:band_instrument_musician).permit(:band_id,:instrument_id,:musician_id)
   end
-end
 ```
+### Updating Trip Join Model Relationships - Storing Musician Relationship 
+```
+class BandInstrumentMusiciansController < ApplicationController
 
+  def update
+    @opening = BandInstrumentMusician.find(params[:id])
+    musician = Musician.find(session[:musician_add])
+    @opening.musician = musician
+    # ...
+  end
+```
+In: views/musicians/show.html.erb
+```
+<div><%= link_to 'Add to My Band', edit_band_instrument_musician_path, class: 'button musician-button' %></div>
+```
+```
+class MusiciansController < ApplicationController
 
+  def show
+    session[:musician_add] = @musician.id
+    @memberships = get_members.all.where(musician_id: @musician.id)
+  end
+```
 
 ## Future Features:
 *Add search to display bands looking to fill an opening based on an instrument (current search only finds musician looking to play an instrument <br>
