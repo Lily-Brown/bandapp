@@ -21,7 +21,7 @@
   <section class="profile-info">
 
     <%= form_for(@band,url: band_path) do |f| %>
-      <p class='toggle btn_hide'>Change photo: <%= f.file_field :photo %></p>
+      <p>Upload Profile Photo: <%= f.file_field :photo, class: 'mp3-button' %></p>
       <h1 class="profile-title"><%= f.text_field :band_name, placeholder: "Name", class: 'value' %></h1>
       <p><%= f.text_area :genres, placeholder: "Genres", class: 'value' %></p>
       <p><%= f.text_area :influences, placeholder: "Influences", class: 'value' %></p>
