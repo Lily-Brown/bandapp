@@ -21,7 +21,7 @@ Instrument.create([
   { instrument_name: "Lead Guitar"},
   { instrument_name: "Mandolin"},
   { instrument_name: "Other Percussion"},
-  { instrument_name: "Penny Whiste"}
+  { instrument_name: "Penny Whistle"}
   { instrument_name: "Piano"},
   { instrument_name: "Rhythm Guitar"},
   { instrument_name: "Saxophone"},
@@ -281,6 +281,46 @@ BandInstrumentMusician.create([
 BandInstrumentMusician.create([
   {
     instrument_id: 1,
+    band_id: 7
+  },
+  {
+    instrument_id: 1,
+    band_id: 7
+  },
+  {
+    instrument_id: 8,
+    band_id: 7
+  },
+  {
+    instrument_id: 25,
     band_id: 1
+  },
+  {
+    instrument_id: 33,
+    band_id: 1
+  },
+  {
+    instrument_id: 24,
+    band_id: 2
+  },
+  {
+    instrument_id: 12,
+    band_id: 3
+  },
+  {
+    instrument_id: 20,
+    band_id: 4
+  },
+  {
+    instrument_id: 13,
+    band_id: 5
+  },
+  {
+    instrument_id: 33,
+    band_id: 6
+  },
+  {
+    instrument_id: 9,
+    band_id: 6
   }
 ])
