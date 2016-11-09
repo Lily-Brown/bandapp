@@ -66,6 +66,17 @@ textarea {
   border-radius: 3px;
 }
 
+select {
+  width: 50%;
+  height: 100px;
+  font-size: 16px;
+  color: #666666;
+  padding: 10px 15px;
+  margin: 0;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+}
+
 button,
 .button,
 input[type="button"],
