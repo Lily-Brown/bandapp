@@ -30,7 +30,7 @@ body {
   background-color: #ddd;
   min-height: 100%;
   font-family: 'Open Sans', sans-serif;
-  padding: 0;
+  padding: 0 0 4rem;
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
@@ -40,21 +40,49 @@ body {
 Inputs and Buttons
 **************************************/
 
+input {
+  background-color: #fff;
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
+  color: #666666;
+  padding: 10px 15px;
+  margin: 0;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+textarea {
+  width: 98%;
+  height: 100px;
+  font-size: 16px;
+  color: #666666;
+  padding: 10px 15px;
+  margin: 0;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+}
+
 button,
+.button,
 input[type="button"],
 input[type="submit"] {
   display: inline-block;
   background-color: #555;
-  width: 100%;
+  min-width: 245px;
   color: #fff;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1;
   font-weight: 400;
   letter-spacing: 2px;
   text-align: center;
+  text-decoration: none;
   text-transform: none;
-  padding: 20px 16px;
-  margin: 24px 0 0;
+  padding: 12px 16px;
+  margin: 0 0 20px;
   border-radius: 3px;
   border: none;
   cursor: pointer;
@@ -62,11 +90,78 @@ input[type="submit"] {
 
 
 button:hover,
+.button:hover,
+.mp3-button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover {
-  background-color: #000;
+  background-color: #9a1719;
   color: #fff;
 }
+
+.mp3-button {
+  display: inline-block;
+  background-color: #555;
+  min-width: 245px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  padding: 0;
+  margin: 0 0 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px 20px 0;
+  word-break: keep-all;
+}
+
+label {
+  margin: 0 0 0 0;
+}
+
+/*
+Toggle Input Fields
+*****************************************/
+
+.toggle_text {
+  background-color: #fff;
+  font-size: 1em;
+  font-family: serif;
+  border: none;
+}
+
+.toggle_text_area {
+/*  background-color: #fff;*/
+  font-size: 1em;
+  font-family: serif;
+  border: none;
+  resize: none;
+  height: 20px;
+  width: 90%;
+  padding: 0;
+}
+
+.edit_area {
+  width: 90%;
+}
+
+.btn_hide {
+  display: none;
+}
+
+/*
+Layout
+*****************************************/
 
 .wrap {
   background: #ddd;
@@ -76,9 +171,17 @@ input[type="submit"]:hover {
 }
 
 .content {
-  max-width: 1000px;
-  padding: 0 30px 60px;
+  max-width: 980px;
+  padding: 30px 30px 60px;
   margin: 0 auto;
+}
+
+.content-white {
+  background: #fff;
+  max-width: 980px;
+  padding: 30px 30px 40px;
+  margin: 60px auto;
+  overflow: hidden;
 }
 
 .float-fix {
@@ -87,6 +190,10 @@ input[type="submit"]:hover {
   margin: 0;
   overflow: hidden;
 }
+
+/*
+Navigation
+*****************************************/
 
 nav {
   background: #fff;
@@ -126,7 +233,7 @@ nav .wrap {
 nav ul {
   max-width: 240px;
   padding: 0;
-  margin: 0 0 0 32.5%;
+  margin: 0 0 0 29%;
   float: left;
 }
 
@@ -165,29 +272,9 @@ nav li a:hover {
   padding-right: 10px;
 }
 
-/* For editable fields */
-.toggle_text {
-  font-size: 1em;
-  font-family: serif;
-  border: none;
-}
-
-.toggle_text_area {
-  font-size: 1em;
-  font-family: serif;
-  border: none;
-  resize: none;
-  max-height: 10em;
-  width: 90%;
-}
-
-.edit_area {
-  width: 90%;
-}
-
-.btn_hide {
-  display: none;
-}
+/*
+Footer
+**************************************/
 
 footer {
   position: absolute;
