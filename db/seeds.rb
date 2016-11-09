@@ -21,7 +21,7 @@ Instrument.create([
   { instrument_name: "Lead Guitar"},
   { instrument_name: "Mandolin"},
   { instrument_name: "Other Percussion"},
-  { instrument_name: "Penny Whistle"}
+  { instrument_name: "Penny Whistle"},
   { instrument_name: "Piano"},
   { instrument_name: "Rhythm Guitar"},
   { instrument_name: "Saxophone"},
