@@ -2,7 +2,8 @@
 
 BandWagon is an application that allows bands and musicians to find each other. Users can sign up and log in as a Band or a Musician, view/edit their profile and browse either Bands or Musicians (whichever they're looking for!). Users then have the option to connect with Bands/Musicians and start making music together!
 
-
+##App URL
+https://hop-on-the-bandwagon.herokuapp.com
 
 ##Technologies Used <br>
 Ruby 2.3.0 <br>
