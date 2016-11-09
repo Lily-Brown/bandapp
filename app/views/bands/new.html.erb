@@ -3,9 +3,16 @@
   <h1>Create Dat Band</h1>
   <%= form_for @band do |f| %>
     <div class="container-gray">
-        <%= f.text_field :band_name, placeholder: "Name" %>
+      <%= f.text_field :band_name, placeholder: "Name" %>
+    </div>
+    <div class="float-fix">
+      <div class="cancel-container">
+	      <p><%= link_to 'Cancel', :back, class: 'button band-button'  %></p>
       </div>
-      <%= f.submit "Create", class: "button" %>
+      <div class="save-container">
+	      <%= f.submit "Create", class: "button" %>
+      </div>
+    </div>
     </div>
   <% end %>
 
