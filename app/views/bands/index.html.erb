@@ -13,7 +13,7 @@
               <%= link_to band.band_name, band_path(band), :class => 'index-name band-name' %>
               <p class="box-info"><span class="box-label">Genres</span>: <%= truncate(band.genres, length: 44) %></p>
               <p class="box-info"><span class="box-label">Influences</span>: <%= truncate(band.influences, length: 44) %></p>
-              <p class="box-info"><span class="box-label">Location</span>: <%= band.zip_code %></p>
+              <p class="box-info"><span class="box-label">Zip Code</span>: <%= band.zip_code %></p>
             </div>
           </div><!-- End Band Inner Box -->
         </div><!-- End Band Outer Box -->
