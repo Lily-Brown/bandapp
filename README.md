@@ -93,7 +93,7 @@ class MusiciansController < ApplicationController
 
   def show
     session[:musician_add] = @musician.id
-    @memberships = get_members.all.where(musician_id: @musician.id)
+    # ...
   end
 ```
 
