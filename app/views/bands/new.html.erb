@@ -1,12 +1,18 @@
-<section class="content-white">
+<section class="form-content-white">
 
   <h1>Create Dat Band</h1>
   <%= form_for @band do |f| %>
     <div class="container-gray">
-      <div class="input-field">
-        <%= f.text_field :band_name, placeholder: "Name", class: "form-control" %>
+      <%= f.text_field :band_name, placeholder: "Name" %>
+    </div>
+    <div class="float-fix">
+      <div class="cancel-container">
+	      <p><%= link_to 'Cancel', :back, class: 'button band-button'  %></p>
       </div>
-      <%= f.submit "Create", class: "btn btn-primary" %>
+      <div class="save-container">
+	      <%= f.submit "Create", class: "button" %>
+      </div>
+    </div>
     </div>
   <% end %>
 

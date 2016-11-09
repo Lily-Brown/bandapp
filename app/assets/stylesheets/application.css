@@ -91,6 +91,13 @@ select {
   border-radius: 3px;
 }
 
+
+.input-field select {
+  width: 100% !important;
+  height: auto;
+  margin: 0 0 30px !important;
+}
+
 button,
 .button,
 input[type="button"],
@@ -112,6 +119,10 @@ input[type="submit"] {
   border-radius: 3px;
   border: none;
   cursor: pointer;
+}
+
+.submit-button {
+  max-width: 245px;
 }
 
 
@@ -252,6 +263,15 @@ Layout
   background: #fff;
   max-width: 920px;
   padding: 30px 30px 40px;
+  margin: 60px auto;
+  overflow: hidden;
+}
+
+.form-content-white {
+  background: #fff;
+  max-width: 600px;
+  text-align: center;
+  padding: 30px 40px;
   margin: 60px auto;
   overflow: hidden;
 }

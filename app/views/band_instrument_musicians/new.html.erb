@@ -1,15 +1,22 @@
-<section class="content-white">
+<section class="form-content-white">
 
   <h1>Create Opening</h1>
   <%= form_for @member do |f| %>
     <div class="container-gray">
       <div class="input-field">
-        <p><%= f.collection_select :instrument_id, Instrument.all, :id, :instrument_name, prompt: true %></p>
+        <%= f.collection_select :instrument_id, Instrument.all, :id, :instrument_name, prompt: true, class: 'opening-select' %>
       </div>
       <div class="hidden-field">
         <%= f.hidden_field(:band_id, :value => session[:band_id]) %>
       </div>
-      <%= f.submit "Create", class: "btn btn-primary" %>
+      <div class="float-fix">
+      <div class="cancel-container">
+        <p><%= link_to 'Cancel', :back, class: 'button band-button'  %></p>
+      </div>
+      <div class="save-container">
+      <%= f.submit "Create", class: "button band-button" %>
+      </div>
+    </div>
     </div>
   <% end %>
 
