@@ -20,12 +20,12 @@ class Band < ApplicationRecord
   extend FriendlyId
     friendly_id :band_name, use: :slugged
 
-  def members 
-    BandInstrumentMusician.all.where.not({musician_id: nil})
+  def members(band_id)
+    BandInstrumentMusician.all.where.not({musician_id: nil}).all.where(band_id: band_id)
   end
 
-  def openings
-    BandInstrumentMusician.all.where({musician_id: nil})
+  def openings(band_id)
+    BandInstrumentMusician.all.where({musician_id: nil}).all.where(band_id: band_id)
   end
 
 end
