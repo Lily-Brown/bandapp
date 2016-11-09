@@ -162,3 +162,17 @@ audio {
 .profile-title {
   font-size: 30px;
 }
+
+.create-band-button {
+  position: relative;
+  bottom: 0;
+  left: 68%;
+}
+
+@media only screen and (max-width: 680px) {
+
+  .create-band-button {
+    position: static;
+  }
+
+}
