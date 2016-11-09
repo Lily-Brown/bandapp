@@ -99,11 +99,11 @@ ActiveRecord::Schema.define(version: 20161107214620) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "slug"
     t.string   "mp3_file_name"
     t.string   "mp3_content_type"
     t.integer  "mp3_file_size"
     t.datetime "mp3_updated_at"
-    t.string   "slug"
     t.index ["slug"], name: "index_musicians_on_slug", unique: true, using: :btree
   end
 
