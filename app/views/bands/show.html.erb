@@ -19,9 +19,10 @@
             <audio controls>
               <source src="<%= @band.mp3 %>" type="audio/mpeg">
             </audio>
-          <% end %>
-          <% if current_musician == @band.owner %>
-            <p class="no-audio">Edit your profile to add audio</p>
+          <% else %>
+            <% if current_musician == @band.owner %>
+              <p class="no-audio">Edit your profile to add audio</p>
+            <% end %>
           <% end %>
       </div>
 
