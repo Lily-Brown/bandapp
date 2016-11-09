@@ -13,19 +13,23 @@
   <section class="profile-info">
 
     <%= form_for(@musician,url: musician_path) do |f| %>
-      <p>Change photo: <%= f.file_field :photo, class: 'mp3-button' %></p>
-      <h1 class="profile-title"><%= f.text_field :name, placeholder: "Name", class: 'value' %></h1>
-      <p><%= f.text_area :genres, placeholder: "Genres", class: 'value' %></p>
-      <p><%= f.text_area :influences, placeholder: "Influences", class: 'value' %></p>
-      <p><%= f.text_area :bio, placeholder: "Bio", class: 'value' %></p>
-      <p><%= f.text_field :zip_code, placeholder: "Zip Code", class: 'value' %></p>
-      <p><%= f.text_area :gear, placeholder: "Gear", class: 'value' %></p>
-      <p>Upload audio:<br /> <%= f.file_field :mp3, class: 'mp3-button' %></p>
+      <p><span class="profile-label">Upload Image</span> <%= f.file_field :photo, class: 'mp3-button' %></p>
+      <p><span class="profile-label">Name</span><%= f.text_field :name, placeholder: "Name", class: 'value' %></h1>
+      <p><span class="profile-label">Genres</span><%= f.text_area :genres, placeholder: "Genres", class: 'value' %></p>
+      <p><span class="profile-label">Influences</span><%= f.text_area :influences, placeholder: "Influences", class: 'value' %></p>
+      <p><span class="profile-label">Bio</span><%= f.text_area :bio, placeholder: "Bio", class: 'value' %></p>
+      <p><span class="profile-label">Zip Code</span><%= f.text_field :zip_code, placeholder: "Zip Code", class: 'value' %></p>
+      <p><span class="profile-label">Gear</span><%= f.text_area :gear, placeholder: "Gear", class: 'value' %></p>
+      <p><span class="profile-label">Upload Audio</span><br /> <%= f.file_field :mp3, class: 'mp3-button' %></p>
 
-      <p>
-        <strong>Instruments: </strong><br />
-        <%= f.collection_check_boxes( :instrument_ids, Instrument.all, :id, :instrument_name, {:prompt => "Please Select a Sector"}, {:multiple => true}) %>
-      </p>
+      <span class="profile-label">Instruments: </span><br />
+      <div class="checkbox-list">
+        <%= f.collection_check_boxes( :instrument_ids, Instrument.all, :id, :instrument_name, {:prompt => "Please Select a Sector"}, {:multiple => true}) do |b| %>
+          <%= b.label class:"label-checkbox" do%>
+          <%= b.check_box + b.text %>
+          <% end %>
+        <% end %>
+      </div>
 
 
       <% if current_musician == @musician %>
