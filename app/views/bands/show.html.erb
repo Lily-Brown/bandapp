@@ -56,7 +56,7 @@
         <h3>Openings:</h3>
         <% @openings.each do |o| %>
           <p>
-            <%= o.instrument.instrument_name %>
+            <%= link_to o.instrument.instrument_name, instrument_path(o.instrument) %>
             <% if current_musician == @band.owner %>
               <%= link_to 'delete', band_instrument_musician_path(:member_id => o.id), method: :delete, class: 'delete-button' %>
             <% end %>
