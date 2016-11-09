@@ -1,10 +1,10 @@
-<section class="form-container">
+<section class="content-white">
 
   <h1>Create Opening</h1>
   <%= form_for @member do |f| %>
     <div class="container-gray">
       <div class="input-field">
-        <%= f.collection_select :instrument_id, Instrument.all, :id, :instrument_name, prompt: true %>
+        <p><%= f.collection_select :instrument_id, Instrument.all, :id, :instrument_name, prompt: true %></p>
       </div>
       <div class="hidden-field">
         <%= f.hidden_field(:band_id, :value => session[:band_id]) %>

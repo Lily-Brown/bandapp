@@ -141,9 +141,14 @@
   margin: 0;
 }
 
+.profile-label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .profile-image {
   max-width: 300px;
-  margin: 0 0 15px;
+  margin: 0 auto 15px;
 }
 
 .profile-image img {
@@ -163,16 +168,38 @@ audio {
   font-size: 30px;
 }
 
-.create-band-button {
-  position: relative;
-  bottom: 0;
-  left: 68%;
+.band-membership-container {
+  margin-bottom: 60px
 }
 
-@media only screen and (max-width: 680px) {
+.cancel-container {
+  width: 220px;
+  margin-right: 60px;
+  margin-bottom: 30px;
+  float: left;
+}
 
-  .create-band-button {
-    position: static;
+.save-container {
+  width: 220px;
+  margin-bottom: 30px;
+  float: left;
+}
+
+.checkbox-list {
+  margin: 0 0 40px;
+}
+
+@media only screen and (max-width: 880px) {
+
+  .profile-action {
+    width: 100%;
+    padding: 0;
+    float: none;
+  }
+
+  .profile-info {
+    width: 100%;
+    float: none;
   }
 
 }

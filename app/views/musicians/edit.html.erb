@@ -6,52 +6,45 @@
       <%= image_tag @musician.photo.url(:medium) %>
     </div>
 
-    <a class="button" href="mailto:<%= @musician.email %>">Send Message</a>
 
-    <%= link_to 'Add to My Band', edit_band_instrument_musician_path, class: 'button' %>
-
-    <div class ='toggle btn_show'>
-      <% if @musician.mp3? %>
-        <audio controls>
-          <source src="<%= @musician.mp3 %>" type="audio/mpeg">
-        </audio>
-      <% else %>
-        <p class="no-audio">Edit your profile to add audio</p>
-      <% end %>
-    </div>
 
   </section>
 
   <section class="profile-info">
 
     <%= form_for(@musician,url: musician_path) do |f| %>
-      <p class='toggle btn_hide'>Change photo: <%= f.file_field :photo %></p>
-      <h1 class="profile-title"><%= f.text_field :name, placeholder: "Name", class: 'value' %></h1>
-      <p><%= f.text_area :genres, placeholder: "Genres", class: 'value' %></p>
-      <p><%= f.text_area :influences, placeholder: "Influences", class: 'value' %></p>
-      <p><%= f.text_area :bio, placeholder: "Bio", class: 'value' %></p>
-      <p><%= f.text_field :zip_code, placeholder: "Zip Code", class: 'value' %></p>
-      <p><%= f.text_area :gear, placeholder: "Gear", class: 'value' %></p>
-      <p>Upload audio:<br /> <%= f.file_field :mp3, class: 'mp3-button' %></p>
+      <p><span class="profile-label">Upload Image</span> <%= f.file_field :photo, class: 'mp3-button' %></p>
+      <p><span class="profile-label">Name</span><%= f.text_field :name, placeholder: "Name", class: 'value' %></h1>
+      <p><span class="profile-label">Genres</span><%= f.text_area :genres, placeholder: "Genres", class: 'value' %></p>
+      <p><span class="profile-label">Influences</span><%= f.text_area :influences, placeholder: "Influences", class: 'value' %></p>
+      <p><span class="profile-label">Bio</span><%= f.text_area :bio, placeholder: "Bio", class: 'value' %></p>
+      <p><span class="profile-label">Zip Code</span><%= f.text_field :zip_code, placeholder: "Zip Code", class: 'value' %></p>
+      <p><span class="profile-label">Gear</span><%= f.text_area :gear, placeholder: "Gear", class: 'value' %></p>
+      <p><span class="profile-label">Upload Audio</span><br /> <%= f.file_field :mp3, class: 'mp3-button' %></p>
 
-      <p>
-        <strong>Instruments: </strong></br>
-        <%= f.collection_check_boxes( :instrument_ids, Instrument.all, :id, :instrument_name, {:prompt => "Please Select a Sector"}, {:multiple => true}) %>
-      </p>
-
-
-    <% if current_musician == @musician %>
-      <div class="float-fix">
-        <div style="width: 220px; float: left; margin-right: 60px;">
-        <p><%= link_to 'Cancel', :back, class: 'button'  %></p>
-        </div>
-        <div style="width: 220px; float: left;">
-        <p><%= link_to "Save", "javascript:save_form()", class: 'button' %></p>
+      <span class="profile-label">Instruments: </span><br />
+      <div class="checkbox-list">
+        <%= f.collection_check_boxes( :instrument_ids, Instrument.all, :id, :instrument_name, {:prompt => "Please Select a Sector"}, {:multiple => true}) do |b| %>
+          <%= b.label class:"label-checkbox" do%>
+          <%= b.check_box + b.text %>
+          <% end %>
         <% end %>
-        </div>
       </div>
+
+
+      <% if current_musician == @musician %>
+        <div class="float-fix">
+          <div class="cancel-container">
+          <p><%= link_to 'Cancel', :back, class: 'button'  %></p>
+          </div>
+          <div class="save-container">
+          <p><%= link_to "Save", "javascript:save_form()", class: 'button' %></p>
+          <% end %>
+          </div>
+        </div>
     <%end%>
 
 
   </section>
+
 </div>

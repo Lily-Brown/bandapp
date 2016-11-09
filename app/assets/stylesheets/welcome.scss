@@ -76,3 +76,43 @@
   }
 
 }
+
+/* About Us (welcome#show)
+--------------------------------------------- */
+
+.about-us-container {
+  margin: 60px;
+}
+
+.about-us-pic-container {
+  margin: 40px;
+}
+
+.about-us-box-outer {
+  word-spacing: 0;
+  display: inline-block;
+  padding: 0;
+  margin: 0 40px 40px;
+  vertical-align: top;
+  border: 2px solid #e5e5e5;
+}
+
+.about-us-box-inner {
+  background: #fff;
+  color: #000;
+  width: 245px;
+  height: 325px;
+  text-align: center;
+  padding: 0 0 20px;
+  margin: 0;
+  border: 2px solid #dddddd;
+}
+
+.about-us-pic {
+  display: block;
+  width: 240px;
+  height: 260px;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
