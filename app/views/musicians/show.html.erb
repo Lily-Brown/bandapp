@@ -41,23 +41,26 @@
       <p><span class="profile-label">Zip Code:</span> <%= @musician.zip_code %></p>
 
        <div>
-        <strong>Instruments: </strong>
-        <% @musician.instruments.each do |instrument| %>
-          <%= link_to instrument.instrument_name, instrument_path(instrument) %>
-        <% end %>
+        <p>
+          <span class="profile-label">Instruments: </span>
+          <% @musician.instruments.each do |instrument| %>
+            <%= link_to instrument.instrument_name, instrument_path(instrument) %>
+          <% end %>
+        </p>
       </div>
 
       <div>
         <p>
-          <strong>Bands I own: </strong>
+          <span class="profile-label">Bands I own: </span>
           <% @musician.bands.each do |band| %>
             <%= link_to band.band_name, band_path(band) %>
           <% end %>
         </p>
       </div>
 
-      <div>
-        <p><strong>Bands I'm in: </strong>
+      <div class="band-membership-container">
+        <p>
+          <span class="profile-label">Bands I'm in: </span>
           <% @memberships.each do |membership| %>
             <%= link_to membership.band.band_name, band_path(membership.band) %> - <%= membership.instrument.instrument_name %>
           <% end %>
