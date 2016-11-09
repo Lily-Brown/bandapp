@@ -109,8 +109,14 @@
 	margin: 0 0 20px;
 }
 
-.index-name:hover {
+.band-name:hover {
 	background: #9a1719;
+  color: #fff;
+  text-decoration: none;
+}
+
+.musician-name:hover {
+  background: #424cbd;
   color: #fff;
   text-decoration: none;
 }

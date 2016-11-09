@@ -10,7 +10,7 @@
             <div>
               <div class="index-medium-thumbnail"><%= link_to( image_tag(band.photo(:thumb)), band_path(band)) %>
               </div>
-              <%= link_to band.band_name, band_path(band), :class => 'index-name' %>
+              <%= link_to band.band_name, band_path(band), :class => 'index-name band-name' %>
               <p class="box-info"><span class="box-label">Genres</span>: <%= truncate(band.genres, length: 44) %></p>
               <p class="box-info"><span class="box-label">Influences</span>: <%= truncate(band.influences, length: 44) %></p>
               <p class="box-info"><span class="box-label">Location</span>: <%= band.zip_code %></p>
