@@ -4,9 +4,16 @@
     <title>Bandapp</title>
     <%= csrf_meta_tags %>
 
+    <!-- Application Scripts -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- MP3 Player -->
     <%= mp3_player_headers %>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
   </head>
 
   <body>
@@ -14,10 +21,10 @@
     <!-- Start Nav -->
     <nav>
       <div class="wrap">
-        <a href="/" class="nav-logo">BandApp</a>
+        <a href="/" class="nav-logo">BandWagon</a>
         <ul>
-          <li><%= link_to "Find A Musician", musicians_path %></li>
-          <li><%= link_to "Find A Band", bands_path %></li>
+          <li><%= link_to "Musicians", musicians_path %></li>
+          <li><%= link_to "Bands", bands_path %></li>
         </ul>
         <ul class="account-nav">
           <% if current_musician %>
@@ -53,7 +60,7 @@
 
     </div>
 
-  <footer>&copy 2016 BandApp</footer>
+  <footer>&copy; 2016 BandWagon</footer>
 
     <p><center><%= link_to 'About Us', aboutus_path %><center></p>
 

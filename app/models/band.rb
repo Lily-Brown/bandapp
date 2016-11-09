@@ -11,6 +11,7 @@ class Band < ApplicationRecord
 
   # owner
   belongs_to :musician
+  alias_method :owner, :musician
 
   # membership in band w/ instrument
 	has_and_belongs_to_many :musicians, join_table: :band_instrument_musicians
@@ -18,5 +19,13 @@ class Band < ApplicationRecord
 
   extend FriendlyId
     friendly_id :band_name, use: :slugged
+
+  def members(band_id)
+    BandInstrumentMusician.all.where.not({musician_id: nil}).all.where(band_id: band_id)
+  end
+
+  def openings(band_id)
+    BandInstrumentMusician.all.where({musician_id: nil}).all.where(band_id: band_id)
+  end
 
 end

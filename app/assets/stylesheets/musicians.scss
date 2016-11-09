@@ -1,3 +1,164 @@
 // Place all the styles related to the Musicians controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Musician Index Layout
+--------------------------------------------- */
+
+.box-container {
+	background: #ddd;
+  width: 100%;
+  text-align: center;
+  word-spacing: 40px;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.find-instruments {
+  display: inline-block;
+  background-color: #555;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  padding: 20px 16px;
+  margin: 0 auto;
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.find-instruments:hover {
+	background: #9a1719;
+}
+
+.center-find-instruments {
+	padding: 40px 0 0;
+	margin: 0;
+	text-align: center;
+}
+
+.box-list {
+  max-width: 1120px;
+  word-spacing: 40px;
+  padding: 0;
+  margin: 30px auto 20px;
+}
+
+.box-outer {
+  word-spacing: 0;
+  display: inline-block;
+  padding: 0;
+  margin: 0 0 40px;
+  vertical-align: top;
+  border: 2px solid #e5e5e5;
+}
+
+.box-inner {
+  background: #fff;
+  width: 240px;
+  height: 360px;
+  text-align: left;
+  padding: 0 0 20px;
+  margin: 0;
+  border: 2px solid #dddddd;
+}
+
+.index-medium-thumbnail {
+	display: block;
+  width: 240px;
+  height: 150px;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.index-medium-thumbnail img {
+	width: 236px;
+	padding: 0;
+	margin: 0;
+}
+
+.index-name p {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 15px;
+}
+
+.index-name {
+	background: #555;
+	display: block;
+	width: 100%px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: normal;
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 0;
+	margin: 0 0 20px;
+}
+
+.index-name:hover {
+	background: #9a1719;
+}
+
+.box-label {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.box-info {
+	font-size: 12px;
+	padding: 0 15px;
+	margin: 0 0 10px;
+}
+
+
+/* Musician Show Layout
+--------------------------------------------- */
+
+.profile-action {
+  width: 28%;
+  float: left;
+  text-align: center;
+  padding: 0;
+  margin: 0 30px 0 0;
+}
+
+.profile-info {
+  width: 68%;
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-image {
+  max-width: 300px;
+  margin: 0 0 15px;
+}
+
+.profile-image img {
+  max-width: 100%;
+}
+
+audio {
+  max-width: 250px;
+}
+
+.no-audio {
+  font-size: 14px;
+  text-align: center;
+}
+
+.profile-title {
+  font-size: 30px;
+}
