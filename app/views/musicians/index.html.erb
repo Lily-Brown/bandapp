@@ -14,7 +14,7 @@
 						  <%= link_to musician.name, musician_path(musician), :class => 'index-name musician-name' %>
 						  <p class="box-info"><span class="box-label">Genres</span>: <%= truncate(musician.genres, length: 44) %></p>
 						  <p class="box-info"><span class="box-label">Influences</span>: <%= truncate(musician.influences, length: 44) %></p>
-						  <p class="box-info"><span class="box-label">Location</span>: <%= musician.zip_code %></p>
+						  <p class="box-info"><span class="box-label">Zip Code</span>: <%= musician.zip_code %></p>
 						</div>
 					</div><!-- End Musician Inner Box -->
 				</div><!-- End Musician Outer Box -->
