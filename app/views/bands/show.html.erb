@@ -8,8 +8,8 @@
       </div>
 
       <% if current_musician == @band.owner %>
-        <p><%= link_to 'Edit', edit_band_path, class: 'button' %></p>
-        <p><%= link_to 'Delete', band_path, class: 'button', method: :delete, data: { confirm: 'Are you sure you want to delete this band?' } %></p>
+        <p><%= link_to 'Edit Profile', edit_band_path, class: 'button' %></p>
+        <p><%= link_to 'Delete Profile', band_path, class: 'button', method: :delete, data: { confirm: 'Are you sure you want to delete this band?' } %></p>
       <% else %>
         <a class="button" href="mailto:<%= @band.owner.email %>">Send Message</a>
       <% end %>
