@@ -1,8 +1,10 @@
-<h1>Instruments Index</h1>
-
-<% @instruments.each do |instrument| %>
-<div>
-  <p><%= link_to instrument.instrument_name, instrument_path(instrument) %></p>
-  <p><%= instrument.id %></p>
+<div class="content">
+  <h2>Find Musicians by Instrument</h2>
+  <div class="box-container">
+    <div class="box-list">
+      <% @instruments.each do |instrument| %>
+        <p class="find-instruments inst"><%= link_to instrument.instrument_name, instrument_path(instrument) %></p>
+      <% end %>
+    </div>
+  </div>
 </div>
-<% end %>
