@@ -1,6 +1,6 @@
 #BandWagon
 
-BandWagon is an application that allows bands and musicians to find each other. Users can sign up and log in as a Band or a Musician, view/edit their profile and browse either Bands or Musicians (whichever they're looking for!). Users then have the option to Connect with Bands/Musicians and start the communications rolling in!
+BandWagon is an application that allows bands and musicians to find each other. Users can sign up and log in as a Band or a Musician, view/edit their profile and browse either Bands or Musicians (whichever they're looking for!). Users then have the option to connect with Bands/Musicians and start making music together!
 
 
 
@@ -14,6 +14,7 @@ CSS 3 <br>
 
 
 ##Frameworks, libraries, and gems <br>
+Bootstrap 3.3.7<br>
 Turbolinks 5.0.1<br>
 Jquery-Rails 4.2.1<br>
 Rspec-Rails 3.5.2<br>
