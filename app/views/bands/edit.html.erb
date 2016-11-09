@@ -1,0 +1,46 @@
+<div class="content-white">
+
+  <section class="profile-action">
+
+    <div class="profile-image">
+      <%= image_tag @band.photo.url(:medium) %>
+    </div>
+
+    <div class ='toggle btn_show'>
+      <% if @band.mp3? %>
+        <audio controls>
+          <source src="<%= @band.mp3 %>" type="audio/mpeg">
+        </audio>
+      <% else %>
+        <p class="no-audio">Edit your profile to add audio</p>
+      <% end %>
+    </div>
+
+  </section>
+
+  <section class="profile-info">
+
+    <%= form_for(@band,url: band_path) do |f| %>
+      <p class='toggle btn_hide'>Change photo: <%= f.file_field :photo %></p>
+      <h1 class="profile-title"><%= f.text_field :band_name, placeholder: "Name", class: 'value' %></h1>
+      <p><%= f.text_area :genres, placeholder: "Genres", class: 'value' %></p>
+      <p><%= f.text_area :influences, placeholder: "Influences", class: 'value' %></p>
+      <p><%= f.text_area :bio, placeholder: "Bio", class: 'value' %></p>
+      <p><%= f.text_field :zip_code, placeholder: "Zip Code", class: 'value' %></p>
+      <p><%= f.text_area :gear, placeholder: "Gear", class: 'value' %></p>
+      <p>Upload audio:<br /> <%= f.file_field :mp3, class: 'mp3-button' %></p>
+
+    <% if current_musician == @band.owner %>
+      <div class="float-fix">
+        <div style="width: 220px; float: left; margin-right: 60px;">
+        <p><%= link_to 'Cancel', :back, class: 'button'  %></p>
+        </div>
+        <div style="width: 220px; float: left;">
+        <p><%= link_to "Save", "javascript:save_form()", class: 'button' %></p>
+        <% end %>
+        </div>
+      </div>
+    <%end%>
+
+  </section>
+</div>
