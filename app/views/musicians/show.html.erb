@@ -15,42 +15,40 @@
 
       <div><%= link_to 'Add to My Band', edit_band_instrument_musician_path, class: 'button musician-button' %></div>
 
-     <div class ='audio-container'>
-         <% if @musician.mp3? %>
-           <audio controls>
-             <source src="<%= @musician.mp3 %>" type="audio/mpeg">
-           </audio>
-         <% else %>
-           <% if current_musician == @musician %>
-             <p class="no-audio">Edit your profile to add audio</p>
-           <% end %>
+      <div class ='audio-container'>
+       <% if @musician.mp3? %>
+         <audio controls>
+           <source src="<%= @musician.mp3 %>" type="audio/mpeg">
+         </audio>
+       <% else %>
+         <% if current_musician == @musician %>
+           <p class="no-audio">Edit your profile to add audio</p>
          <% end %>
-     </div>
+       <% end %>
+      </div>
 
     </section>
 
     <section class="profile-info">
 
       <h1 class="profile-title"><%= @musician.name %></h1>
-
       <p><span class="profile-label">Genres:</span> <%= @musician.genres %></p>
-
       <p><span class="profile-label">Influences:</span> <%= @musician.influences %></p>
-
       <p><span class="profile-label">Bio:</span> <%= @musician.bio %></p>
-
       <p><span class="profile-label">Zip Code:</span> <%= @musician.zip_code %></p>
 
-       <div>
+      <div class="instruments-container">
         <p>
           <span class="profile-label">Instruments: </span>
-          <% @musician.instruments.each do |instrument| %>
-            <%= link_to instrument.instrument_name, instrument_path(instrument) %>
-          <% end %>
+          <ul class="no-bullet instrument-list">
+            <% @musician.instruments.each do |instrument| %>
+            <li><%= link_to instrument.instrument_name, instrument_path(instrument) %></li>
+            <% end %>
+          </ul>
         </p>
       </div>
 
-      <div>
+      <div class="my-bands-container">
         <p>
           <span class="profile-label">Bands I own: </span>
           <ul class="no-bullet">
@@ -72,16 +70,16 @@
         </p>
       </div>
 
-          <% if current_musician == @musician %>
-      <div class="float-fix">
-        <div class="cancel-container">
-          <p><%= link_to 'Delete Profile', musician_path, method: :delete, class: 'button musician-button', data: { confirm: 'Are you sure you want to delete your profile?' } %></p>
+      <% if current_musician == @musician %>
+        <div class="float-fix">
+          <div class="cancel-container">
+            <p><%= link_to 'Delete Profile', musician_path, method: :delete, class: 'button musician-button', data: { confirm: 'Are you sure you want to delete your profile?' } %></p>
+          </div>
+          <div class="save-container">
+            <p><%= link_to 'Create Band', new_band_path, class: 'button create-band-button' %></p>
+          </div>
         </div>
-        <div class="save-container">
-          <p><%= link_to 'Create Band', new_band_path, class: 'button create-band-button' %></p>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
 
     </section>
   </div>
