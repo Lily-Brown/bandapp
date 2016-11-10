@@ -133,7 +133,8 @@ input[type="button"]:hover {
   text-decoration: none;
 }
 
-.musician-button:hover {
+.musician-button:hover,
+.submit-button:hover {
   background-color: #424cbd;
   color: #fff;
   text-decoration: none;
