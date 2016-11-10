@@ -101,7 +101,7 @@ class MusiciansController < ApplicationController
 ```
 
 ## Future Features:
-* Add search to display bands looking to fill an opening based on an instrument (current search only finds musician looking to play an instrument <br>
+* Add search to display bands looking to fill an opening based on an instrument (current search only finds musician looking to play an instrument) <br>
 * Add inner-app messaging and/or chat capabilities <br>
 * Enable "likes" for both musician and band pages <br>
 * Create ability for user to log and display "favorite" musician or band <br>
