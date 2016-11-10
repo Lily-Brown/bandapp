@@ -109,8 +109,8 @@ class MusiciansController < ApplicationController
 * Increase user media allowance so they can display multiple pics and audio samples <br>
 
 
-##To deploy on your local machine:
-In your terminal:
+##To deploy on your local machine:<br>
+In your terminal:<br>
 1 - Fork and clone repo <br>
 2 - Install <a href="http://www.imagemagick.org/script/install-source.php">Imagemagick</a> <br>
 3 - Run ```bundle``` <br>
