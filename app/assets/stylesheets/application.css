@@ -91,7 +91,6 @@ select {
   border-radius: 3px;
 }
 
-
 .input-field select {
   width: 100% !important;
   height: auto;
@@ -124,7 +123,6 @@ input[type="submit"] {
 .submit-button {
   max-width: 245px;
 }
-
 
 button:hover,
 .button:hover,
