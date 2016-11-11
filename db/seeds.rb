@@ -1,4 +1,4 @@
-Instrument.create([
+instruments = Instrument.create([
   { instrument_name: "Accordion"},
   { instrument_name: "Acoustic Guitar"},
   { instrument_name: "Background Singer"},
@@ -39,7 +39,7 @@ Instrument.create([
   { instrument_name: "Vocalist - Tenor"},
 ])
 
-Musician.create([
+musicians = Musician.create([
   {
     name: "Rip VanAgain",
     genres: "Rock",
@@ -225,51 +225,12 @@ Band.create([
   }
 ])
 
-InstrumentMusician.create([
-  {
-    instrument_id: 1,
-    musician_id: 1
-  },
-  {
-    instrument_id: 2,
-    musician_id: 2
-  },
-  {
-    instrument_id: 3,
-    musician_id: 3
-  },
-  {
-    instrument_id: 4,
-    musician_id: 4
-  },
-  {
-    instrument_id: 5,
-    musician_id: 5
-  },
-  {
-    instrument_id: 6,
-    musician_id: 6
-  },
-  {
-    instrument_id: 7,
-    musician_id: 7
-  },
-  {
-    instrument_id: 8,
-    musician_id: 8
-  },
-  {
-    instrument_id: 9,
-    musician_id: 9
-  },
-  {
-    instrument_id: 10,
-    musician_id: 10
-  }
-])
+musicians.each.with_index do |musician, index|
+  musician.instruments.push(instruments[index])
+end
 
 # create members
-BandInstrumentMusician.create([
+BandsInstrumentsMusician.create([
   {
     instrument_id: 1,
     band_id: 1,
@@ -278,7 +239,7 @@ BandInstrumentMusician.create([
 ])
 
 # create openings
-BandInstrumentMusician.create([
+BandsInstrumentsMusician.create([
   {
     instrument_id: 1,
     band_id: 7
