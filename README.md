@@ -2,7 +2,8 @@
 
 BandWagon is an application that allows bands and musicians to find each other. Users can sign up and log in as a Band or a Musician, view/edit their profile and browse either Bands or Musicians (whichever they're looking for!). Users then have the option to connect with Bands/Musicians and start making music together!
 
-
+##App URL
+https://hop-on-the-bandwagon.herokuapp.com
 
 ##Technologies Used <br>
 Ruby 2.3.0 <br>
@@ -19,7 +20,6 @@ Turbolinks 5.0.1<br>
 Jquery-Rails 4.2.1<br>
 Rspec-Rails 3.5.2<br>
 Shoulda-Matchers 3.1.1<br>
-Mp3_Player 0.1.1<br>
 Paperclip 5.1.0<br>
 BCrypt 3.1.11<br>
 Friendly_id 5.1.0<br>
@@ -52,9 +52,11 @@ https://app.moqups.com/k.bushman/ZFgDqhSRw6/view
 
 ### Adding Instrument to Musician - Challenge of collection_check_boxes input attriubtes
 ```
-<%= f.collection_check_boxes( :instrument_ids, Instrument.all, :id, :instrument_name, {:prompt => "Please Select a Sector"}, {:multiple => true}) do |b| %>
-  <%= b.label class:"label-checkbox" do%>
-  <%= b.check_box + b.text %>
+<%= form_for(@musician,url: musician_path) do |f| %>
+...
+  <%= f.collection_check_boxes( :instrument_ids, Instrument.all, :id, :instrument_name, {:prompt => "Please Select a Sector"},     {:multiple => true}) do |b| %>
+    <%= b.label class:"label-checkbox" do%>
+    <%= b.check_box + b.text %>
   <% end %>
 <% end %>
 ```
@@ -99,17 +101,19 @@ class MusiciansController < ApplicationController
 ```
 
 ## Future Features:
-*Add search to display bands looking to fill an opening based on an instrument (current search only finds musician looking to play an instrument <br>
-*Add inner-app messaging and/or chat capabilities <br>
-*Enable "likes" for both musician and band pages <br>
-*Create ability for user to log and display "favorite" musician or band <br>
-*Allow user to add musician or band as a "friend" to further refine the user's network <br>
-*Increase user media allowance so they can display multiple pics and audio samples <br>
+* Add search to display bands looking to fill an opening based on an instrument (current search only finds musician looking to play an instrument) <br>
+* Add inner-app messaging and/or chat capabilities <br>
+* Enable "likes" for both musician and band pages <br>
+* Create ability for user to log and display "favorite" musician or band <br>
+* Allow user to add musician or band as a "friend" to further refine the user's network <br>
+* Increase user media allowance so they can display multiple pics and audio samples <br>
 
 
-##To deploy:
-
+##To deploy on your local machine:<br>
+In your terminal:<br>
 1 - Fork and clone repo <br>
-2 - bundle <br>
-3 - rake db:setup <br>
-4 - Start using the website! <br>
+2 - Install <a href="http://www.imagemagick.org/script/install-source.php">Imagemagick</a> <br>
+3 - Run ```bundle``` <br>
+4 - Run ```rake db:setup``` <br>
+5 - Start your server ```rails s```<br>
+6 - Start using the website! <br>

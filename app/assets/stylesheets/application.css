@@ -91,7 +91,6 @@ select {
   border-radius: 3px;
 }
 
-
 .input-field select {
   width: 100% !important;
   height: auto;
@@ -125,7 +124,6 @@ input[type="submit"] {
   max-width: 245px;
 }
 
-
 button:hover,
 .button:hover,
 .mp3-button:hover,
@@ -135,7 +133,8 @@ input[type="button"]:hover {
   text-decoration: none;
 }
 
-.musician-button:hover {
+.musician-button:hover,
+.submit-button:hover {
   background-color: #424cbd;
   color: #fff;
   text-decoration: none;
@@ -229,7 +228,6 @@ Toggle Input Fields
 }
 
 .toggle_text_area {
-/*  background-color: #fff;*/
   font-size: 1em;
   font-family: serif;
   border: none;
@@ -260,15 +258,15 @@ Layout
 
 .content {
   max-width: 980px;
-  padding: 30px 30px 60px;
-  margin: 0 auto 60px;
+  padding: 30px 30px 40px;
+  margin: 0 auto 40px;
 }
 
 .content-white {
   background: #fff;
   max-width: 920px;
   padding: 30px 30px 40px;
-  margin: 60px auto;
+  margin: 50px auto 60px;
   overflow: hidden;
 }
 
@@ -289,88 +287,28 @@ Layout
 }
 
 /*
-Navigation
+Responsive Navigation
 *****************************************/
 
-nav {
-  background: #fff;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border-bottom: 1px solid #999;
-}
-
-nav .wrap {
-  background: #fff;
-  max-width: 90%;
-  min-height: auto;
-  height: 4em;
-  padding: 15px 30px;
-  margin: 0 auto;
-}
-
-.nav-logo {
-  display: block;
-  float: left;
-  font-size: 18px;
-  line-height: 1;
-  font-weight: normal;
-  color: #000;
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-logo:hover {
-  text-decoration: none;
-}
-
-.account-nav {
-  padding: 0;
-  margin: 0;
-  float: right;
-}
-
-nav ul {
-  max-width: 400px;
-  padding: 0;
-  margin: 0 0 0 29%;
-  float: left;
-}
-
-nav li {
-  display: inline-block;
-  list-style-type: none;
-  font-size: 15px;
-  font-weight: normal;
-  padding: 0;
-}
-
-nav li:first-child {
-  padding-right: 40px;
-}
-
-nav li a {
-  color: #000;
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
+.navbar-default {
+  background-color: #fff;
   border: none;
-  cursor: pointer;
+  border-bottom: 1px solid;
+  border-color: #999;
 }
 
-nav li:hover,
-nav li a:hover {
-  text-decoration: none;
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0;
 }
 
-.account-nav li {
-  font-size: 15px;
-  padding: 0 10px;
+.container-fluid {
+  max-width: 960px;
 }
 
-.account-nav li:first-child {
-  padding-right: 10px;
+.collapsed-menu {
+  background: #ddd;
+  min-width: 40px;
 }
 
 /*

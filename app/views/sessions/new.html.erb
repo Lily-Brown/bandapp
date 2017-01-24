@@ -1,4 +1,4 @@
-<div class="content-white">
+<div class="form-content-white">
 <h1>Log In</h1>
 
 <%= form_for @musician, url: "/sessions", method: "POST" do |f| %>
@@ -8,6 +8,6 @@
   <div>
     <%= f.password_field :password, placeholder: "Password" %>
   </div>
-  <%= f.submit "Log In" %>
+  <%= f.submit "Log In", class: 'button musician-button' %>
 <% end %>
 </div>
