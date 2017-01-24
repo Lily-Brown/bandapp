@@ -10,6 +10,7 @@
     <!-- Application Scripts -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- MP3 Player -->
     <%= mp3_player_headers %>
@@ -31,8 +32,16 @@
         </ul>
         <ul class="account-nav">
           <% if current_musician %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Bands <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Bands I Own",
+                    bands_path(:musician => current_musician.id, :bands_own => true) %></li>
+                <li><%= link_to "Bands I'm In",
+                    bands_path(:musician => current_musician.id, :bands_member => true) %></li>
+              </ul>
+            </li>
             <li><%= link_to "Profile", musician_path(current_musician) %></li>
-            <li><%= link_to "My Bands", bands_path(:musician => current_musician.id) %></li>
             <li><%= link_to "Log Out", logout_path %></li>
           <% else %>
             <li><%= link_to "Create Account", new_musician_path %></li>
@@ -40,7 +49,8 @@
           <% end %>
         </ul>
       </div>
-    </nav><!-- End Nav -->
+    </nav>
+    <!-- End Nav -->
 
     <div class="wrap">
 

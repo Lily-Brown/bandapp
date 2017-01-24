@@ -3,8 +3,11 @@ class BandsController < ApplicationController
   before_action :is_owner, only: [:edit, :update, :destroy]
 
   def index
-    if (params.has_key?(:musician))
+    if (params.has_key?(:musician) && params.has_key?(:bands_own))
       @bands = Musician.find(params[:musician]).bands
+    elsif (params.has_key?(:musician) && params.has_key?(:bands_member))
+      memberships = get_members.all.where(musician_id: params[:musician])
+      @bands = get_bands(memberships)
     else
       @bands = Band.all
     end
@@ -68,6 +71,18 @@ class BandsController < ApplicationController
       flash[:error] = 'You do not have permission to perform this action'
       redirect_to root_path
     end
+  end
+
+  def get_members
+    BandInstrumentMusician.all.where.not({musician_id: nil})
+  end
+
+  def get_bands(memberships)
+    @bands = []
+    memberships.each do |membership|
+      @bands << Band.find(membership.band_id)
+    end
+    @bands
   end
 
 end
