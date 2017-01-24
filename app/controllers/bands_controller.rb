@@ -3,7 +3,11 @@ class BandsController < ApplicationController
   before_action :is_owner, only: [:edit, :update, :destroy]
 
   def index
-    @bands = Band.all
+    if (params.has_key?(:musician))
+      @bands = Musician.find(params[:musician]).bands
+    else
+      @bands = Band.all
+    end
   end
 
   def new
