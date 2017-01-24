@@ -32,7 +32,7 @@
         <ul class="account-nav">
           <% if current_musician %>
             <li><%= link_to "Profile", musician_path(current_musician) %></li>
-            <li><%= link_to "Bands", bands_path(:musician => current_musician.id) %></li>
+            <li><%= link_to "My Bands", bands_path(:musician => current_musician.id) %></li>
             <li><%= link_to "Log Out", logout_path %></li>
           <% else %>
             <li><%= link_to "Create Account", new_musician_path %></li>
