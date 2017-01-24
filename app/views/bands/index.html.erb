@@ -2,23 +2,28 @@
 
   <div class="box-container">
 
-    <div class="box-list">
-      <% @bands.each do |band| %>
-        <div class="box-outer">
-          <div class="box-inner">
+    <% if @bands.length < 1 %>
+      <h2>There are no bands to display.</h2>
+    <% else %>
+      <div class="box-list">
+        <% @bands.each do |band| %>
+          <div class="box-outer">
+            <div class="box-inner">
 
-            <div>
-              <div class="index-medium-thumbnail"><%= link_to( image_tag(band.photo(:thumb)), band_path(band)) %>
+              <div>
+                <div class="index-medium-thumbnail"><%= link_to( image_tag(band.photo(:thumb)), band_path(band)) %>
+                </div>
+                <%= link_to band.band_name, band_path(band), :class => 'index-name band-name' %>
+                <p class="box-info"><span class="box-label">Genres</span>: <%= truncate(band.genres, length: 44) %></p>
+                <p class="box-info"><span class="box-label">Influences</span>: <%= truncate(band.influences, length: 44) %></p>
+                <p class="box-info"><span class="box-label">Zip Code</span>: <%= band.zip_code %></p>
               </div>
-              <%= link_to band.band_name, band_path(band), :class => 'index-name band-name' %>
-              <p class="box-info"><span class="box-label">Genres</span>: <%= truncate(band.genres, length: 44) %></p>
-              <p class="box-info"><span class="box-label">Influences</span>: <%= truncate(band.influences, length: 44) %></p>
-              <p class="box-info"><span class="box-label">Zip Code</span>: <%= band.zip_code %></p>
-            </div>
-          </div><!-- End Band Inner Box -->
-        </div><!-- End Band Outer Box -->
-      <% end %>
-    </div><!-- End Band List -->
+            </div><!-- End Band Inner Box -->
+          </div><!-- End Band Outer Box -->
+        <% end %>
+      </div><!-- End Band List -->
+    <% end %>
+
   </div><!-- End Band Container -->
 
 </div><!-- End Content -->

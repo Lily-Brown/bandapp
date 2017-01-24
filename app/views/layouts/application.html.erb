@@ -12,6 +12,8 @@
     <!-- Application Scripts -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript"
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -40,6 +42,15 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if current_musician %>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Bands <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Bands I Own",
+                      bands_path(:musician => current_musician.id, :bands_own => true) %></li>
+                  <li><%= link_to "Bands I'm In",
+                      bands_path(:musician => current_musician.id, :bands_member => true) %></li>
+                </ul>
+              </li>
               <li><%= link_to "Profile", musician_path(current_musician) %></li>
               <li><%= link_to "Log Out", logout_path %></li>
             <% else %>
@@ -74,9 +85,6 @@
     <footer>
         <p>&copy; 2016 BandWagon <span class="word-space">|</span> <%= link_to 'About Us', about_us_path %></p>
     </footer>
-
-    <!-- Bootstrap Minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
   </body>
 </html>
