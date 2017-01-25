@@ -11,6 +11,7 @@ Rails 5.0.0.1 <br>
 Javascript 5.1 <br>
 Html 5 <br>
 CSS 3 <br>
+AWS/S3 <br>
 
 
 
