@@ -1,11 +1,11 @@
-#BandWagon
+# BandWagon
 
 BandWagon is an application that allows bands and musicians to find each other. Users can sign up and log in as a Band or a Musician, view/edit their profile and browse either Bands or Musicians (whichever they're looking for!). Users then have the option to connect with Bands/Musicians and start making music together!
 
-##App URL
+## App URL
 https://hop-on-the-bandwagon.herokuapp.com
 
-##Technologies Used <br>
+## Technologies Used <br>
 Ruby 2.3.0 <br>
 Rails 5.0.0.1 <br>
 Javascript 5.1 <br>
@@ -15,7 +15,7 @@ AWS/S3 <br>
 
 
 
-##Frameworks, libraries, and gems <br>
+## Frameworks, libraries, and gems <br>
 Bootstrap 3.3.7<br>
 Turbolinks 5.0.1<br>
 Jquery-Rails 4.2.1<br>
@@ -29,7 +29,7 @@ Imagemagick 7.0.3<br>
 
 
 
-##Database <br>
+## Database <br>
 Postgresql
 
 
@@ -110,7 +110,7 @@ class MusiciansController < ApplicationController
 * Increase user media allowance so they can display multiple pics and audio samples <br>
 
 
-##To deploy on your local machine:<br>
+## To deploy on your local machine:<br>
 In your terminal:<br>
 1 - Fork and clone repo <br>
 2 - Install <a href="http://www.imagemagick.org/script/install-source.php">Imagemagick</a> <br>
