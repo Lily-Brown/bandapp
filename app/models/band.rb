@@ -1,4 +1,12 @@
 class Band < ApplicationRecord
+  has_many :bands_instruments_musicians, dependent: :destroy
+  has_many :musicians, through: :bands_instruments_musicians
+  has_many :instruments, through: :bands_instruments_musicians
+
+  belongs_to :musician # owner
+  alias_method :owner, :musician
+
+
   has_attached_file :photo, :styles => { medium: "300x300>", thumb: "240x240>" }, :default_url => ":style/default-band-photo.png"
   validates_attachment :photo,
     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
@@ -8,14 +16,6 @@ class Band < ApplicationRecord
 
   has_attached_file :mp3
   do_not_validate_attachment_file_type :mp3, :content_type => /.*/
-
-  # owner
-  belongs_to :musician
-  alias_method :owner, :musician
-
-  # membership in band w/ instrument
-	has_and_belongs_to_many :musicians, join_table: :band_instrument_musicians
-	has_and_belongs_to_many :instruments, join_table: :band_instrument_musicians
 
   extend FriendlyId
     friendly_id :band_name, use: :slugged

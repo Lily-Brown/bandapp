@@ -10,21 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107214620) do
+ActiveRecord::Schema.define(version: 20161111045111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "band_instrument_musicians", force: :cascade do |t|
-    t.integer  "musician_id"
-    t.integer  "instrument_id"
-    t.integer  "band_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["band_id"], name: "index_band_instrument_musicians_on_band_id", using: :btree
-    t.index ["instrument_id"], name: "index_band_instrument_musicians_on_instrument_id", using: :btree
-    t.index ["musician_id"], name: "index_band_instrument_musicians_on_musician_id", using: :btree
-  end
 
   create_table "bands", force: :cascade do |t|
     t.string   "band_name"
@@ -52,6 +41,17 @@ ActiveRecord::Schema.define(version: 20161107214620) do
     t.index ["slug"], name: "index_bands_on_slug", unique: true, using: :btree
   end
 
+  create_table "bands_instruments_musicians", force: :cascade do |t|
+    t.integer  "musician_id"
+    t.integer  "instrument_id"
+    t.integer  "band_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["band_id"], name: "index_bands_instruments_musicians_on_band_id", using: :btree
+    t.index ["instrument_id"], name: "index_bands_instruments_musicians_on_instrument_id", using: :btree
+    t.index ["musician_id"], name: "index_bands_instruments_musicians_on_musician_id", using: :btree
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -64,21 +64,21 @@ ActiveRecord::Schema.define(version: 20161107214620) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
-  create_table "instrument_musicians", force: :cascade do |t|
-    t.integer  "instrument_id"
-    t.integer  "musician_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["instrument_id"], name: "index_instrument_musicians_on_instrument_id", using: :btree
-    t.index ["musician_id"], name: "index_instrument_musicians_on_musician_id", using: :btree
-  end
-
   create_table "instruments", force: :cascade do |t|
     t.string   "instrument_name"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "slug"
     t.index ["slug"], name: "index_instruments_on_slug", unique: true, using: :btree
+  end
+
+  create_table "instruments_musicians", force: :cascade do |t|
+    t.integer  "instrument_id"
+    t.integer  "musician_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["instrument_id"], name: "index_instruments_musicians_on_instrument_id", using: :btree
+    t.index ["musician_id"], name: "index_instruments_musicians_on_musician_id", using: :btree
   end
 
   create_table "musicians", force: :cascade do |t|
@@ -107,10 +107,10 @@ ActiveRecord::Schema.define(version: 20161107214620) do
     t.index ["slug"], name: "index_musicians_on_slug", unique: true, using: :btree
   end
 
-  add_foreign_key "band_instrument_musicians", "bands"
-  add_foreign_key "band_instrument_musicians", "instruments"
-  add_foreign_key "band_instrument_musicians", "musicians"
   add_foreign_key "bands", "musicians"
-  add_foreign_key "instrument_musicians", "instruments"
-  add_foreign_key "instrument_musicians", "musicians"
+  add_foreign_key "bands_instruments_musicians", "bands"
+  add_foreign_key "bands_instruments_musicians", "instruments"
+  add_foreign_key "bands_instruments_musicians", "musicians"
+  add_foreign_key "instruments_musicians", "instruments"
+  add_foreign_key "instruments_musicians", "musicians"
 end
